@@ -1,0 +1,17 @@
+<mat-tab-group>
+    <mat-tab label="Opis">
+        <div class="text-center">Ovaj algoritam vrši zamenu vrednosti unesenih brojeva.</div>
+    </mat-tab>
+    <mat-tab label="Rešenje">
+        <form class="input-group">
+            <label for="valueone">Prva vrednost:</label>
+            <input type='number' [(ngModel)]='prvaVrednost' id="valueone" name="valueone" />
+            <label for="valuetwo">Druga vrednost:</label>
+            <input type='number' [(ngModel)]='drugaVrednost' id="valuetwo" name="valuetwo" />
+        </form>
+        <form class="button-form">
+            <button class='btn btn-primary' (click)='swapValues()'> Zameni
+            </button>
+        </form>
+    </mat-tab>
+</mat-tab-group>

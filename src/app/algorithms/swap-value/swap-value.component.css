@@ -1,0 +1,29 @@
+.text-center {
+    text-align: center;
+    padding: 50px 0 50px;
+}
+
+.input-group {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+}
+
+label {
+    display: inline-block;
+    clear: left;
+    width: 250px;
+    text-align: left;
+}
+
+input {
+    display: inline-block;
+}
+
+.button-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+}
