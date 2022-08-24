@@ -22,7 +22,7 @@ export class AlgorithmsService {
                         let allText = rawFile.responseText;
                         resolve(allText);
                     } else {
-                        reject("There is an Error!")
+                        reject(new Error("Whoops!"));
                     }
                 }
             }

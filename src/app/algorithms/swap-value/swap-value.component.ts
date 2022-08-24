@@ -10,19 +10,35 @@ export class SwapValueComponent implements OnInit {
 
   prvaVrednost: number;
   drugaVrednost: number;
-  _filetext: string;
+  tsCode: string;
+  htmlCode: string;
+  cssCode: string;
   tsURL: string;
+  htmlURL: string;
+  cssURL: string;
 
   constructor(private algorithmService: AlgorithmsService) {
     this.prvaVrednost = 0;
     this.drugaVrednost = 0;
-    this._filetext = "";
+    this.tsCode = "";
+    this.htmlCode = "";
+    this.cssCode = "";
     this.tsURL = '/swap-value/swap-value.component.ts';
+    this.htmlURL = '/swap-value/swap-value.component.html';
+    this.cssURL = '/swap-value/swap-value.component.css'
   }
 
   ngOnInit(): void {
     this.algorithmService.showCode(this.tsURL).then((value) => {
-      this._filetext = value;
+      this.tsCode = value;
+    })
+
+    this.algorithmService.showCode(this.htmlURL).then((value) => {
+      this.htmlCode = value;
+    })
+
+    this.algorithmService.showCode(this.cssURL).then((value) => {
+      this.cssCode = value;
     })
   }
 
