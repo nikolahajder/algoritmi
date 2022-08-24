@@ -1,29 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { RangeValueAccessor } from '@angular/forms';
+import { AlgorithmsService } from '../algorithms.service';
 
 @Component({
-  selector: 'app-higher-value',
-  templateUrl: './higher-value.component.html',
-  styleUrls: ['./higher-value.component.css']
+    selector: 'app-higher-value',
+    templateUrl: './higher-value.component.html',
+    styleUrls: ['./higher-value.component.css']
 })
 export class HigherValueComponent implements OnInit {
 
-  constructor() { }
+    valueA: number;
+    valueB: number;
+    _filetext: string;
+    tsURL: string;
 
-   valueA = 0;
-   valueB = 0;
+    constructor(private algorithmService: AlgorithmsService) {
+        this.valueA = 0;
+        this.valueB = 0;
+        this._filetext = "";
+        this.tsURL = '/higher-value/higher-value.component.ts';
+    }
 
+    ngOnInit(): void {
+        this.algorithmService.showCode(this.tsURL).then((value) => {
+            this._filetext = value;
+        })
+    }
 
-  ngOnInit(): void {
-  }
-
-  outputA () {
-    this.valueA = (this.valueA + this.valueB)/ 2;
-    console.log(this.valueA);
-    this.valueB =  this.valueA - Math.abs(this.valueA - this.valueB);
-    console.log(this.valueB);
-    this.valueA = this.valueB - 2*(this.valueB - this.valueA);
-    console.log(this.valueA);
-  }
+    outputA() {
+        this.valueA = (this.valueA + this.valueB) / 2;
+        this.valueB = this.valueA - Math.abs(this.valueA - this.valueB);
+        this.valueA = this.valueB - 2 * (this.valueB - this.valueA);
+    }
 
 }

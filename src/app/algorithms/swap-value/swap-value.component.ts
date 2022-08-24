@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { provideRoutes } from '@angular/router';
+import { AlgorithmsService } from '../algorithms.service';
 
 @Component({
   selector: 'app-swap-value',
@@ -8,14 +8,22 @@ import { provideRoutes } from '@angular/router';
 })
 export class SwapValueComponent implements OnInit {
 
-  constructor() { }
+  prvaVrednost: number;
+  drugaVrednost: number;
+  _filetext: string;
+  tsURL: string;
 
-  prvaVrednost: number = 0;
-  drugaVrednost: number = 0;
-
-  ngOnInit(): void {
+  constructor(private algorithmService: AlgorithmsService) {
     this.prvaVrednost = 0;
     this.drugaVrednost = 0;
+    this._filetext = "";
+    this.tsURL = '/swap-value/swap-value.component.ts';
+  }
+
+  ngOnInit(): void {
+    this.algorithmService.showCode(this.tsURL).then((value) => {
+      this._filetext = value;
+    })
   }
 
   swapValues() {

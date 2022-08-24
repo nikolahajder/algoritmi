@@ -10,6 +10,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
+import { AngularSplitModule } from "angular-split";
+import { MatTreeModule } from '@angular/material/tree';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SwapValueComponent } from './algorithms/swap-value/swap-value.component';
@@ -25,6 +28,9 @@ import { HigherValueComponent } from './algorithms/higher-value/higher-value.com
     HigherValueComponent
   ],
   imports: [
+    HttpClientModule,
+    MatTreeModule,
+    AngularSplitModule,
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
