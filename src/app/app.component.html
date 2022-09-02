@@ -2,24 +2,21 @@
   <mat-sidenav mode="over" [fixedInViewport]="true" opened mode="side">
     <mat-accordion>
       <a mat-button style="text-align: center">
-        <mat-icon [routerLink]="['/home']">
-          Algoritmi
+        <mat-icon>
+          Algoritms
         </mat-icon>
       </a>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Algoritmi
+            Algorithms
           </mat-panel-title>
         </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a [routerLink]="['/swap']" mat-button>Zamena vrednosti brojeva</a>
-        </mat-nav-list>
-        <mat-nav-list>
-          <a [routerLink]="['/higher']" mat-button>Veća vrednost u A</a>
+        <mat-nav-list *ngFor="let alg of algs">
+          <a mat-button (click)="getAlgs(alg.data.id)">{{alg.data.title}}</a>
         </mat-nav-list>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-sidenav>
-  <router-outlet></router-outlet>
+  <ng-template algHost></ng-template>
 </mat-sidenav-container>

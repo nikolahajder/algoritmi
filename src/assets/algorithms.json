@@ -1,0 +1,27 @@
+{
+    "algos": [
+        {
+            "id": 1,
+            "title": "Swap Value",
+            "description": "Input two whole numbers into variables A and B. Using only math functions, swap the values in these two variables, without using 'if' or any helper variables",
+            "paths": 
+                {
+                    "TypeScript": "/swap-value/swap-value.component.ts",
+                    "HTML": "/swap-value/swap-value.component.html",
+                    "CSS": "/swap-value/swap-value.component.css"
+                }
+            
+        },
+        {
+            "id": 2,
+            "title": "Higher Value",
+            "description": "Input two whole numbers into variables A and B. Using only math functions, display the higher variable in variable A, without using 'if' or any helper variables",
+            "paths": 
+                {
+                    "TypeScript": "/higher-value/higher-value.component.ts",
+                    "HTML": "/higher-value/higher-value.component.html",
+                    "CSS": "/higher-value/higher-value.component.css"
+                }
+        }
+    ]
+}

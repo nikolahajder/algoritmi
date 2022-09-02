@@ -15,17 +15,21 @@ import { MatTreeModule } from '@angular/material/tree';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { SwapValueComponent } from './algorithms/swap-value/swap-value.component';
+//import { SwapValueComponent } from './algorithms/swap-value/swap-value.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
-import { HigherValueComponent } from './algorithms/higher-value/higher-value.component';
+//import { HigherValueComponent } from './algorithms/higher-value/higher-value.component';
+import { AlgDirective } from './alg.directive';
+import { ShowComponent } from './show-component/show.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SwapValueComponent,
+    //SwapValueComponent,
     HomeComponent,
-    HigherValueComponent
+    //HigherValueComponent,
+    AlgDirective,
+    ShowComponent
   ],
   imports: [
     HttpClientModule,
@@ -43,9 +47,9 @@ import { HigherValueComponent } from './algorithms/higher-value/higher-value.com
     MatTabsModule,
     MatInputModule,
     RouterModule.forRoot([
-      { path:'swap', component: SwapValueComponent },
+      //{ path:'swap', component: SwapValueComponent },
       { path: 'home', component: HomeComponent },
-      { path: 'higher', component: HigherValueComponent },
+      //{ path: 'higher', component: HigherValueComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ])
