@@ -1,20 +1,20 @@
 <mat-tab-group>
-  <mat-tab label="Opis">
+  <mat-tab label="Description">
       <div class="text-center">{{data.description}}</div>
   </mat-tab>
-  <mat-tab label="Rešenje">
-      <!-- <form class="input-group">
-          <label for="valueone">Prva vrednost:</label>
-          <input type='number' [(ngModel)]='prvaVrednost' id="valueone" name="valueone" />
-          <label for="valuetwo">Druga vrednost:</label>
-          <input type='number' [(ngModel)]='drugaVrednost' id="valuetwo" name="valuetwo" />
-      </form>
-      <form class="button-form">
-          <button class='btn btn-primary' (click)='swapValues()'> Zameni
-          </button>
-      </form> -->
-  </mat-tab>
-  <mat-tab label="Fajl">
+  <mat-tab label="Solution">
+    <form class="input-group">
+        <label for="valueone">Value A:</label>
+        <input type='number' [(ngModel)]='valueA' id="valueone" name="valueone" />
+        <label for="valuetwo">Value B:</label>
+        <input type='number' [(ngModel)]='valueB' id="valuetwo" name="valuetwo" />
+    </form>
+    <form class="button-form">
+        <button class='btn btn-primary' (click)='algorithm(data.id)'> Apply
+        </button>
+    </form>
+</mat-tab>
+  <mat-tab label="File">
       <mat-tab-group>
           <mat-tab label="TypeScript">
               <textarea readonly>

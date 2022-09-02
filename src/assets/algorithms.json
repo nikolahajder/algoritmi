@@ -15,7 +15,7 @@
         {
             "id": 2,
             "title": "Higher Value",
-            "description": "Input two whole numbers into variables A and B. Using only math functions, display the higher variable in variable A, without using 'if' or any helper variables",
+            "description": "Input two whole numbers into variables A and B. Using only math functions, display the higher number in variable A, without using 'if' or any helper variables",
             "paths": 
                 {
                     "TypeScript": "/higher-value/higher-value.component.ts",

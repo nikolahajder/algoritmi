@@ -16,15 +16,18 @@ export class ShowComponent implements OnInit, AlgComponent {
   tsCode: string;
   htmlCode: string;
   cssCode: string;
+  valueA: number;
+  valueB: number;
 
   constructor(elementRef: ElementRef,
-    private algorithmService: AlgorithmsService,
-    private managerService: ManagerService) {
+    private algorithmService: AlgorithmsService) {
       
     this.algorithms = [];
     this.tsCode = "";
     this.htmlCode = "";
     this.cssCode = "";
+    this.valueA = 0;
+    this.valueB = 0;
   }
 
   ngOnInit(): void {
@@ -39,5 +42,8 @@ export class ShowComponent implements OnInit, AlgComponent {
   this.algorithmService.showCode(this.data.paths.CSS).then((value) => {
       this.cssCode = value;
   })
+  }
+
+  algorithm(id: any){
   }
 }
