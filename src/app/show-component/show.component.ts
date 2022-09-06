@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { AlgComponent } from '../alg.component';
 import { AlgItem } from '../alg.item';
 import { AlgorithmsService } from '../algorithms/algorithms.service';
@@ -42,11 +42,10 @@ export class ShowComponent implements OnInit, AlgComponent {
       this.cssCode = value;
     })
     this.algs = this.managerService.getSolutions();
-    //this.loadComponentx(1);
   }
 
   loadComponent(id: any) {
-    const algItem = this.algs[id - 1];
+    const algItem = (this.algs[id - 1]);
 
     const viewContainerRef = this.solutionHost.viewContainerRef;
     viewContainerRef.clear();
@@ -54,4 +53,5 @@ export class ShowComponent implements OnInit, AlgComponent {
     const componentRef = viewContainerRef.createComponent<SolutionComponent>(algItem.component);
     componentRef.instance.data = algItem.data;
   }
+
 }

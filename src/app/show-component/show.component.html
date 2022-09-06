@@ -1,4 +1,4 @@
-<mat-tab-group>
+<mat-tab-group (selectedTabChange)="loadComponent(data.id)">
     <mat-tab label="Description">
         <div class="text-center">{{data.description}}</div>
     </mat-tab>
