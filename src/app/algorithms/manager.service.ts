@@ -1,8 +1,10 @@
 import { Injectable } from "@angular/core";
 import { IAlgorithm } from "./algorithms";
-import Algoritmi from "../../assets/algorithms.json"
+import algoritmi from "../../assets/algorithms.json"
 import { AlgItem } from "../alg.item";
 import { ShowComponent } from "../show-component/show.component";
+import { SwapValueComponent } from "./swap-value/swap-value.component";
+import { HigherValueComponent } from "./higher-value/higher-value.component";
 
 @Injectable({
     providedIn: 'root'
@@ -14,7 +16,7 @@ export class ManagerService {
 
     constructor() {
         this.algorithm = {
-            id: 0,
+            id: 0, 
             title: '',
             description: '',
             paths: {
@@ -25,39 +27,26 @@ export class ManagerService {
         };
         this.arrayAlgorithms = [];
         this.algorithms = [];
-        this.setAlgorithms();
-    }
 
-    setAlgorithms(): void {
         if (localStorage.getItem("algorithms") === null) {
-            let index = Algoritmi.algos.length - 1;
-            for (let i = 0; i <= index; i++) {
-                this.arrayAlgorithms[i] = {
-
-                    id: Algoritmi.algos[i].id,
-                    title: Algoritmi.algos[i].title,
-                    description: Algoritmi.algos[i].description,
-                    paths: {
-                        TypeScript: Algoritmi.algos[i].paths.TypeScript,
-                        HTML: Algoritmi.algos[i].paths.HTML,
-                        CSS: Algoritmi.algos[i].paths.CSS
-                    }
-                };
-            }
-            localStorage.setItem('algorithms', JSON.stringify(this.arrayAlgorithms));
-        } else {
-            return;
+            this.setAlgorithms(algoritmi.algos);
         }
     }
 
+    setAlgorithms(alg: any): void {
+
+        localStorage.setItem('algorithms', JSON.stringify(alg));
+ 
+    }
+ 
     getAlgorithms() {
         let storage = JSON.parse(localStorage.getItem('algorithms') || '{}');
-        let index = Algoritmi.algos.length - 1;
+        let index = storage.length - 1;
         for (let i = 0; i <= index; i++) {
             let algorithm: IAlgorithm;
             algorithm = {
 
-                
+
                 id: storage[i].id,
                 title: storage[i].title,
                 description: storage[i].description,
@@ -72,20 +61,33 @@ export class ManagerService {
         return this.algorithms;
     }
 
-     /*getAlgorithmById(index: number) {
-        for (let i = 0; i <= index;) {
-            if (i == index) {
-                this.algorithm.id = Algoritmi.algos[index].id;
-                this.algorithm.title = Algoritmi.algos[index].title;
-                this.algorithm.description = Algoritmi.algos[index].description;
-                this.algorithm.paths.TypeScript = Algoritmi.algos[index].paths.TypeScript;
-                this.algorithm.paths.HTML = Algoritmi.algos[index].paths.HTML;
-                this.algorithm.paths.CSS = Algoritmi.algos[index].paths.CSS;
-                break;
-            } else {
-                i++;
-            }
-        }
-        return this.algorithm;
-    }*/
+    getSolutions() {
+        return [
+            new AlgItem(
+                SwapValueComponent,
+                {id: 0}
+            ),
+            new AlgItem(
+                HigherValueComponent,
+                {id: 1}
+            )
+        ];
+    }
+
+    /*getAlgorithmById(index: number) {
+       for (let i = 0; i <= index;) {
+           if (i == index) {
+               this.algorithm.id = Algoritmi.algos[index].id;
+               this.algorithm.title = Algoritmi.algos[index].title;
+               this.algorithm.description = Algoritmi.algos[index].description;
+               this.algorithm.paths.TypeScript = Algoritmi.algos[index].paths.TypeScript;
+               this.algorithm.paths.HTML = Algoritmi.algos[index].paths.HTML;
+               this.algorithm.paths.CSS = Algoritmi.algos[index].paths.CSS;
+               break;
+           } else {
+               i++;
+           }
+       }
+       return this.algorithm;
+   }*/
 }

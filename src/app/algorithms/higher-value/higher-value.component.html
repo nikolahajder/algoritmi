@@ -1,36 +1,8 @@
-<mat-tab-group>
-    <mat-tab label="Opis">
-        <div class="text-center">{{ data.description }}</div>
-    </mat-tab>
-    <mat-tab label="Rešenje">
-        <form class="input-group">
-            <label for="valueone">Vrednost A:</label>
-            <input type='number' [(ngModel)]='valueA' id="valueone" name="valueone" />
-            <label for="valuetwo">Vrednost B:</label>
-            <input type='number' [(ngModel)]='valueB' id="valuetwo" name="valuetwo" />
-        </form>
-        <form class="button-form">
-            <button class='btn btn-primary' (click)='outputA()'> Pokreni
-            </button>
-        </form>
-    </mat-tab>
-    <mat-tab label="Fajl">
-        <mat-tab-group>
-            <mat-tab label="TypeScript">
-                <textarea readonly>
-                 {{data.tsCode}}
-                </textarea>
-            </mat-tab>
-            <mat-tab label="HTML">
-                <textarea readonly>
-                 {{data.htmlCode}}
-                </textarea>
-            </mat-tab>
-            <mat-tab label="CSS">
-                <textarea readonly>
-                {{data.cssCode}} 
-                </textarea>
-            </mat-tab>
-        </mat-tab-group>
-    </mat-tab>
-</mat-tab-group>
+<form class="input-group">
+    <label for="valueone">Vrednost A:</label>
+    <input type='number' [(ngModel)]='valueA' id="valueone" name="valueone" />
+    <label for="valuetwo">Vrednost B:</label>
+    <input type='number' [(ngModel)]='valueB' id="valuetwo" name="valuetwo" />
+</form>
+<form class="button-form">
+    <button class='btn btn-primary' (click)='outputA()'> Pokreni

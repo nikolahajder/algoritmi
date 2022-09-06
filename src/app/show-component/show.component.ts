@@ -1,8 +1,10 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { AlgComponent } from '../alg.component';
 import { AlgItem } from '../alg.item';
 import { AlgorithmsService } from '../algorithms/algorithms.service';
 import { ManagerService } from '../algorithms/manager.service';
+import { SolutionComponent } from '../solution.component';
+import { SolutionDirective } from '../solution.directive';
 
 @Component({
   selector: 'app-show',
@@ -11,39 +13,45 @@ import { ManagerService } from '../algorithms/manager.service';
 })
 export class ShowComponent implements OnInit, AlgComponent {
   @Input() data: any;
+  @Input() algs: AlgItem[] = [];
 
-  algorithms: AlgItem[];
+  @ViewChild(SolutionDirective, { static: true }) solutionHost!: SolutionDirective;
+
   tsCode: string;
   htmlCode: string;
   cssCode: string;
-  valueA: number;
-  valueB: number;
 
-  constructor(elementRef: ElementRef,
-    private algorithmService: AlgorithmsService) {
-      
-    this.algorithms = [];
+  constructor(private algorithmService: AlgorithmsService,
+    private managerService: ManagerService) {
+
     this.tsCode = "";
     this.htmlCode = "";
     this.cssCode = "";
-    this.valueA = 0;
-    this.valueB = 0;
   }
 
   ngOnInit(): void {
     this.algorithmService.showCode(this.data.paths.TypeScript).then((value) => {
       this.tsCode = value;
-  })
+    })
 
-  this.algorithmService.showCode(this.data.paths.HTML).then((value) => {
+    this.algorithmService.showCode(this.data.paths.HTML).then((value) => {
       this.htmlCode = value;
-  })
+    })
 
-  this.algorithmService.showCode(this.data.paths.CSS).then((value) => {
+    this.algorithmService.showCode(this.data.paths.CSS).then((value) => {
       this.cssCode = value;
-  })
+    })
+    this.algs = this.managerService.getSolutions();
+    //this.loadComponentx(1);
   }
 
-  algorithm(id: any){
+  loadComponent(id: any) {
+    const algItem = this.algs[id - 1];
+
+    const viewContainerRef = this.solutionHost.viewContainerRef;
+    viewContainerRef.clear();
+
+    const componentRef = viewContainerRef.createComponent<SolutionComponent>(algItem.component);
+    componentRef.instance.data = algItem.data;
   }
 }

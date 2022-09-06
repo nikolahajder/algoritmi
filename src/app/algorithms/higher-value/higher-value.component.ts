@@ -1,15 +1,15 @@
-/* import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AlgorithmsService } from '../algorithms.service';
 import { IAlgorithm } from '../algorithms';
 import { ManagerService } from '../manager.service';
-import { AlgComponent } from 'src/app/alg.component';
+import { SolutionComponent } from 'src/app/solution.component';
 
 @Component({
     selector: 'app-higher-value',
     templateUrl: './higher-value.component.html',
     styleUrls: ['./higher-value.component.css']
 })
-export class HigherValueComponent implements OnInit, AlgComponent{
+export class HigherValueComponent implements OnInit, SolutionComponent{
     @Input() data: any;
 
     valueA: number;
@@ -19,7 +19,7 @@ export class HigherValueComponent implements OnInit, AlgComponent{
     tsCode: string;
     htmlCode: string;
     cssCode: string;
-    algorithm!: IAlgorithm;
+    algorithm: IAlgorithm;
 
     constructor(private algorithmService: AlgorithmsService,
                 private managerService: ManagerService) {
@@ -30,7 +30,16 @@ export class HigherValueComponent implements OnInit, AlgComponent{
         this.tsCode = "";
         this.htmlCode = "";
         this.cssCode = "";
-        //this.algorithm = managerService.getAlgorithmById(1);
+        this.algorithm = {
+            id: 0,
+            title: '',
+            description: '',
+            paths: {
+                TypeScript: '',
+                HTML: '',
+                CSS: ''
+            }
+        };
     }
 
     ngOnInit(): void {
@@ -46,8 +55,6 @@ export class HigherValueComponent implements OnInit, AlgComponent{
         this.algorithmService.showCode(this.algorithm.paths.CSS).then((value) => {
             this.cssCode = value;
         })
-
-        this.algorithm = this.managerService.getAlgorithmById(1);
     }
 
     outputA() {
@@ -57,4 +64,3 @@ export class HigherValueComponent implements OnInit, AlgComponent{
     }
 
 }
- */

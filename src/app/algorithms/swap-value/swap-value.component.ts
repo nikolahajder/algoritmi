@@ -1,5 +1,5 @@
-/* import { Component, OnInit, Input } from '@angular/core';
-import { AlgComponent } from 'src/app/alg.component';
+import { Component, OnInit, Input } from '@angular/core';
+import { SolutionComponent } from 'src/app/solution.component';
 import { AlgorithmsService } from '../algorithms.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { AlgorithmsService } from '../algorithms.service';
   templateUrl: './swap-value.component.html',
   styleUrls: ['./swap-value.component.css']
 })
-export class SwapValueComponent implements OnInit, AlgComponent {
+export class SwapValueComponent implements OnInit, SolutionComponent {
 
   @Input() data: any;
 
@@ -52,4 +52,3 @@ export class SwapValueComponent implements OnInit, AlgComponent {
   }
 
 }
- */

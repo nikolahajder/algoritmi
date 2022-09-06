@@ -15,21 +15,23 @@ import { MatTreeModule } from '@angular/material/tree';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-//import { SwapValueComponent } from './algorithms/swap-value/swap-value.component';
+import { SwapValueComponent } from './algorithms/swap-value/swap-value.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
-//import { HigherValueComponent } from './algorithms/higher-value/higher-value.component';
+import { HigherValueComponent } from './algorithms/higher-value/higher-value.component';
 import { AlgDirective } from './alg.directive';
 import { ShowComponent } from './show-component/show.component';
+import { SolutionDirective } from './solution.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    //SwapValueComponent,
+    SwapValueComponent,
     HomeComponent,
-    //HigherValueComponent,
+    HigherValueComponent,
     AlgDirective,
-    ShowComponent
+    ShowComponent,
+    SolutionDirective
   ],
   imports: [
     HttpClientModule,
