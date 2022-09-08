@@ -5,6 +5,7 @@ import { AlgItem } from "../alg.item";
 import { ShowComponent } from "../show-component/show.component";
 import { SwapValueComponent } from "./swap-value/swap-value.component";
 import { HigherValueComponent } from "./higher-value/higher-value.component";
+import { HomeComponent } from "../core/home/home.component";
 
 @Injectable({
     providedIn: 'root'
@@ -13,6 +14,7 @@ export class ManagerService {
     arrayAlgorithms: IAlgorithm[];
     algorithm: IAlgorithm;
     algorithms: AlgItem[];
+    idArray: number[];
 
     constructor() {
         this.algorithm = {
@@ -27,10 +29,11 @@ export class ManagerService {
         };
         this.arrayAlgorithms = [];
         this.algorithms = [];
+        this.idArray = [];
 
-        if (localStorage.getItem("algorithms") === null) {
-            this.setAlgorithms(algoritmi.algos);
-        }
+        //if (localStorage.getItem("algorithms") === null) {
+        //    this.setAlgorithms(algoritmi.algos);
+       // }
     }
 
     setAlgorithms(alg: any): void {
@@ -61,6 +64,37 @@ export class ManagerService {
         return this.algorithms;
     }
 
+    getLocalAlgorithms() {
+        let storage = JSON.parse(localStorage.getItem('algorithms') || '{}');
+        let index = storage.length - 1;
+        for (let i = 0; i <= index; i++) {
+            let algorithm: IAlgorithm;
+            algorithm = {
+
+
+                id: storage[i].id,
+                title: storage[i].title,
+                description: storage[i].description,
+                paths: {
+                    TypeScript: storage[i].paths.TypeScript,
+                    HTML: storage[i].paths.HTML,
+                    CSS: storage[i].paths.CSS
+                }
+            };
+            this.arrayAlgorithms.push(algorithm);
+        }
+        return this.arrayAlgorithms;
+    }
+
+    getLatestId() {
+        let storage = JSON.parse(localStorage.getItem('algorithms') || '{}');
+        let index = storage.length - 1;
+        for (let i = 0; i <= index; i++) {
+            this.idArray.push(storage[i].id);
+            }
+        return Math.max(...this.idArray);
+    }
+
     getSolutions() {
         return [
             new AlgItem(
@@ -70,24 +104,18 @@ export class ManagerService {
             new AlgItem(
                 HigherValueComponent,
                 {id: 1}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 2}
             )
         ];
     }
 
-    /*getAlgorithmById(index: number) {
-       for (let i = 0; i <= index;) {
-           if (i == index) {
-               this.algorithm.id = Algoritmi.algos[index].id;
-               this.algorithm.title = Algoritmi.algos[index].title;
-               this.algorithm.description = Algoritmi.algos[index].description;
-               this.algorithm.paths.TypeScript = Algoritmi.algos[index].paths.TypeScript;
-               this.algorithm.paths.HTML = Algoritmi.algos[index].paths.HTML;
-               this.algorithm.paths.CSS = Algoritmi.algos[index].paths.CSS;
-               break;
-           } else {
-               i++;
-           }
-       }
-       return this.algorithm;
-   }*/
+    removeAlgorithmByTitle (title: string) {
+        let temp = this.getLocalAlgorithms();
+        localStorage.removeItem("algorithms");
+        temp = temp.filter(temp => temp.title != title);
+        this.setAlgorithms(temp);
+    }
 }

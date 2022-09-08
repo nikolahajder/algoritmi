@@ -1,4 +1,3 @@
-import { Component } from "@angular/core";
 import { IPath } from "./paths";
 
 export interface IAlgorithm {

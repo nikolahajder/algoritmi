@@ -1,11 +1,11 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav mode="over" [fixedInViewport]="true" opened mode="side">
     <mat-accordion>
-      <a mat-button style="text-align: center">
-        <mat-icon>
+      <!-- <a mat-button style="text-align: center">
+        <mat-icon (click)="loadHome()">
           Algoritms
         </mat-icon>
-      </a>
+      </a> -->
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
@@ -13,8 +13,21 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-nav-list *ngFor="let alg of algs">
+
           <a mat-button (click)="getAlgs(alg.data.id)">{{alg.data.title}}</a>
+
         </mat-nav-list>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="openDialog()">
+            <span>Add</span>
+          </button>
+          <button mat-menu-item (click)="removeDialog()">
+            <span>Remove</span>
+          </button>
+        </mat-menu>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-sidenav>

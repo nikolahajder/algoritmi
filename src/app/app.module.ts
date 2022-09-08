@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AngularSplitModule } from "angular-split";
 import { MatTreeModule } from '@angular/material/tree';
 import { HttpClientModule } from '@angular/common/http';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import { AppComponent } from './app.component';
 import { SwapValueComponent } from './algorithms/swap-value/swap-value.component';
@@ -22,6 +23,11 @@ import { HigherValueComponent } from './algorithms/higher-value/higher-value.com
 import { AlgDirective } from './alg.directive';
 import { ShowComponent } from './show-component/show.component';
 import { SolutionDirective } from './solution.directive';
+import {MatMenuModule} from '@angular/material/menu';
+import { AddDialogComponent } from './dialogs/add-dialog/add-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { RemoveDialogComponent } from './dialogs/remove-dialog/remove-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -31,9 +37,14 @@ import { SolutionDirective } from './solution.directive';
     HigherValueComponent,
     AlgDirective,
     ShowComponent,
-    SolutionDirective
+    SolutionDirective,
+    AddDialogComponent,
+    RemoveDialogComponent
   ],
   imports: [
+    MatDialogModule,
+    MatMenuModule,
+    MatButtonToggleModule,
     HttpClientModule,
     MatTreeModule,
     AngularSplitModule,
