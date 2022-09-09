@@ -23,7 +23,7 @@ import { HigherValueComponent } from './algorithms/higher-value/higher-value.com
 import { AlgDirective } from './alg.directive';
 import { ShowComponent } from './show-component/show.component';
 import { SolutionDirective } from './solution.directive';
-import {MatMenuModule} from '@angular/material/menu';
+import {MatMenuModule, MatMenuTrigger} from '@angular/material/menu';
 import { AddDialogComponent } from './dialogs/add-dialog/add-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RemoveDialogComponent } from './dialogs/remove-dialog/remove-dialog.component';

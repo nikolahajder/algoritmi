@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddDialogComponent } from './dialogs/add-dialog/add-dialog.component';
 import { IAlgorithm } from './algorithms/algorithms';
 import { RemoveDialogComponent } from './dialogs/remove-dialog/remove-dialog.component';
+import { MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ import { RemoveDialogComponent } from './dialogs/remove-dialog/remove-dialog.com
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  //title = 'algoritmi';
+  menuTopLeftPosition =  {x: '0', y: '0'} 
   algorithm: IAlgorithm;
 
   @Input() algs: AlgItem[] = [];
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit {
 
   currentAlgIndex = -1;
 
+  @ViewChild(MatMenuTrigger, {static: true}) matMenuTrigger: MatMenuTrigger; 
   @ViewChild(AlgDirective, { static: true }) algHost!: AlgDirective;
 
   constructor(private managerService: ManagerService,
@@ -94,5 +96,19 @@ export class AppComponent implements OnInit {
       data: { title: '' },
     });
   }
+
+  onRightClick(event: MouseEvent) { 
+    // preventDefault avoids to show the visualization of the right-click menu of the browser 
+    event.preventDefault(); 
+
+    // we record the mouse position in our object 
+    this.menuTopLeftPosition.x = event.clientX + 'px'; 
+    this.menuTopLeftPosition.y = event.clientY + 'px'; 
+
+    // we open the menu 
+    // we open the menu 
+    this.matMenuTrigger.openMenu(); 
+
+} 
 }
 

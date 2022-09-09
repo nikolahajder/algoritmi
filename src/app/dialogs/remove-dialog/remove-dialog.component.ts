@@ -25,6 +25,11 @@ export class RemoveDialogComponent implements OnInit {
 
   onAddClick(title: string) {
     this.managerService.removeAlgorithmByTitle(title);
+    this.reloadPage();
+  }
+
+  reloadPage(){
+    window.location.reload();
   }
 
 }

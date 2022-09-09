@@ -13,13 +13,14 @@
           </mat-panel-title>
         </mat-expansion-panel-header>
         <mat-nav-list *ngFor="let alg of algs">
-
           <a mat-button (click)="getAlgs(alg.data.id)">{{alg.data.title}}</a>
-
         </mat-nav-list>
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-          <mat-icon>more_vert</mat-icon>
-        </button>
+        <div (contextmenu)="onRightClick($event)" style="padding-bottom: 20px;">
+        </div>
+
+        <!-- an hidden div is created to set the position of appearance of the menu-->
+        <div style="visibility: hidden; position: fixed;" [style.left]="menuTopLeftPosition.x"
+          [style.top]="menuTopLeftPosition.y" [matMenuTriggerFor]="menu"></div>
         <mat-menu #menu="matMenu">
           <button mat-menu-item (click)="openDialog()">
             <span>Add</span>

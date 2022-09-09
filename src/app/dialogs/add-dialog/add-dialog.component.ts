@@ -43,5 +43,10 @@ export class AddDialogComponent {
     let temp = this.managerService.getLocalAlgorithms();
     temp.push(this.algorithm);
     this.managerService.setAlgorithms(temp);
+    this.reloadPage();
+  }
+
+  reloadPage() {
+    window.location.reload();
   }
 }
