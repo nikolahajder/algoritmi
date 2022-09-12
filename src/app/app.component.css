@@ -22,3 +22,11 @@
   text-align: left;
   display: block;
 }
+
+.mat-icon {
+  color:white;
+}
+
+.mat-expansion-panel-header {
+  color: white;
+}

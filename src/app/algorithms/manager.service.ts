@@ -31,9 +31,9 @@ export class ManagerService {
         this.algorithms = [];
         this.idArray = [];
 
-        //if (localStorage.getItem("algorithms") === null) {
-        //    this.setAlgorithms(algoritmi.algos);
-       // }
+        if(localStorage.getItem("algorithms") === null) {
+          this.setAlgorithms(algoritmi.algos);
+       }
     }
 
     setAlgorithms(alg: any): void {
