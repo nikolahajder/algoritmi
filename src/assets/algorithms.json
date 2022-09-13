@@ -22,6 +22,17 @@
                     "HTML": "/higher-value/higher-value.component.html",
                     "CSS": "/higher-value/higher-value.component.css"
                 }
+        },
+        {
+            "id": 3,
+            "title": "Fibonacci",
+            "description": "Input a number and show exactly that many fibonacci numbers.",
+            "paths": 
+                {
+                    "TypeScript": "/fibonacci/fibonacci.component.ts",
+                    "HTML": "/fibonacci/fibonacci.component.html",
+                    "CSS": "/fibonacci/fibonacci.component.css"
+                }
         }
     ]
 }

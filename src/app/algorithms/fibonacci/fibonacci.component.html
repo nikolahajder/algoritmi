@@ -1,0 +1,12 @@
+<form class="input-group">
+    <label for="value">Enter a value:</label>
+    <input type='number' [(ngModel)]='value' id="value" name="value" />
+</form>
+<form class="output-group">
+    <label for="output">Output:</label>
+    <label type='number' *ngFor="let o of output" id="output" name="output">{{o}}</label>
+</form>
+<form class="button-form">
+    <button class='btn btn-primary' (click)='outputFibonacci()'> Apply
+    </button>
+</form>

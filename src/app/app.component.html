@@ -11,7 +11,7 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         <mat-nav-list *ngFor="let alg of algs">
-          <a mat-raised-button (click)="getAlgs(alg.data.id)" (click)="selectedIndex = alg.data.id" [color]="selectedIndex === alg.data.id ? 'primary' : 'warm'">{{alg.data.title}} <mat-icon (click)="removeDialog(alg.data.title)">remove</mat-icon></a>
+          <a mat-raised-button (click)="getAlgs(alg.data.id)" (click)="selectedIndex = alg.data.id" [color]="selectedIndex === alg.data.id ? 'primary' : 'warm'">{{alg.data.title}}</a> <mat-icon class="minus-icon" (click)="removeDialog(alg.data.title)">remove</mat-icon>
         </mat-nav-list>
       </mat-expansion-panel>
     </mat-accordion>

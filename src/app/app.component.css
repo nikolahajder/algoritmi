@@ -24,9 +24,16 @@
 }
 
 .mat-icon {
-  color:white;
+  color: white;
 }
 
 .mat-expansion-panel-header {
   color: white;
+}
+
+.minus-icon {
+  float:right;
+  padding-left: 5px;
+  margin-left: 10px;
+  padding-top: 8px;
 }

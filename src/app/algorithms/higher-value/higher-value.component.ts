@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AlgorithmsService } from '../algorithms.service';
 import { IAlgorithm } from '../algorithms';
-import { ManagerService } from '../manager.service';
 import { SolutionComponent } from 'src/app/solution.component';
 
 @Component({
@@ -21,8 +20,7 @@ export class HigherValueComponent implements OnInit, SolutionComponent{
     cssCode: string;
     algorithm: IAlgorithm;
 
-    constructor(private algorithmService: AlgorithmsService,
-                private managerService: ManagerService) {
+    constructor(private algorithmService: AlgorithmsService) {
         this.valueA = 0;
         this.valueB = 0;
         this.title = "";

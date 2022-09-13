@@ -27,6 +27,8 @@ import {MatMenuModule, MatMenuTrigger} from '@angular/material/menu';
 import { AddDialogComponent } from './dialogs/add-dialog/add-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RemoveDialogComponent } from './dialogs/remove-dialog/remove-dialog.component';
+import { FibonacciComponent } from './algorithms/fibonacci/fibonacci.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -39,9 +41,11 @@ import { RemoveDialogComponent } from './dialogs/remove-dialog/remove-dialog.com
     ShowComponent,
     SolutionDirective,
     AddDialogComponent,
-    RemoveDialogComponent
+    RemoveDialogComponent,
+    FibonacciComponent
   ],
   imports: [
+    MatFormFieldModule,
     MatDialogModule,
     MatMenuModule,
     MatButtonToggleModule,
