@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ChartConfiguration, Color } from 'chart.js';
 import { SolutionComponent } from 'src/app/solution.component';
 import { IAlgorithm } from '../algorithms';
 import { AlgorithmsService } from '../algorithms.service';
@@ -11,16 +12,20 @@ import { AlgorithmsService } from '../algorithms.service';
 export class BarChartComponent implements OnInit, SolutionComponent {
   @Input() data: any;
 
-  inputArray: number[];
-  title:string;
+  inputArray: string;
+  numbersArray: number[];
+  title: string;
   description: string;
   tsCode: string;
   htmlCode: string;
   cssCode: string;
   algorithm: IAlgorithm;
+  barChartData: ChartConfiguration<'bar'>['data'];
+  barChartLegend = true;
+  barChartPlugins = [];
 
-  constructor(private algorithmService: AlgorithmsService) { 
-    this.inputArray = [];
+  constructor(private algorithmService: AlgorithmsService) {
+    this.inputArray = "";
     this.title = "";
     this.description = "";
     this.tsCode = "";
@@ -53,7 +58,18 @@ export class BarChartComponent implements OnInit, SolutionComponent {
   }
 
   createBarChart() {
-
+    this.numbersArray = this.inputArray.split(',').map(Number);
+    this.barChartData = {
+      labels: this.numbersArray,
+      datasets: [
+        { data: this.numbersArray, label: "Number value",
+          backgroundColor: ["#9C27B0"]
+      }
+      ]
+    };
   }
 
+  public barChartOptions: ChartConfiguration<'bar'>['options'] = {
+    responsive: false,
+  };
 }

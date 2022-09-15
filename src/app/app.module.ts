@@ -30,6 +30,7 @@ import { RemoveDialogComponent } from './dialogs/remove-dialog/remove-dialog.com
 import { FibonacciComponent } from './algorithms/fibonacci/fibonacci.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BarChartComponent } from './algorithms/bar-chart/bar-chart.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { BarChartComponent } from './algorithms/bar-chart/bar-chart.component';
     BarChartComponent
   ],
   imports: [
+    NgChartsModule,
     MatFormFieldModule,
     MatDialogModule,
     MatMenuModule,
@@ -71,7 +73,8 @@ import { BarChartComponent } from './algorithms/bar-chart/bar-chart.component';
       //{ path: 'higher', component: HigherValueComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
-    ])
+    ]),
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
