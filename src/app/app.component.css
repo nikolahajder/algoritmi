@@ -31,9 +31,39 @@
   color: white;
 }
 
-.minus-icon {
-  float:right;
-  padding-left: 5px;
+.minus-button {
+  padding: 0 6px 0 6px;
+  margin: 1px 8px 0px 8px;
+  border-radius: 0px;
+  min-width: 35px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  vertical-align: right;
+  float: right;
+  margin-left: 50px;
+  margin-right: 1px;
+}
+
+.plus-button {
+  padding: 0 6px 0 6px;
+  margin: 6px 8px 6px 8px;
+  border-radius: 0px;
+  min-width: 30px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  float: right;
+  margin-right: -100px;
+  margin-left: 37px;
+}
+
+.mat-expansion-panel-header {
   margin-left: 10px;
-  padding-top: 8px;
 }

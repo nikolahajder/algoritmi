@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   menuTopLeftPosition = { x: '0', y: '0' }
   algorithm: IAlgorithm;
   selectedIndex: number;
+  buttonHelper: number;
 
   @Input() algs: AlgItem[] = [];
   home: AlgItem[] = [];

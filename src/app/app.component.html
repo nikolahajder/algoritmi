@@ -3,15 +3,16 @@
     <mat-accordion>
       <mat-expansion-panel hideToggle [expanded]="true"  [disabled]="true">
         <mat-expansion-panel-header>
-          <mat-panel-title (click)="loadHome()" (click)="selectedIndex = -1">
+          <mat-panel-title (click)="loadHome()" (click)="selectedIndex = -1" (click)="buttonHelper = -1">
             Algorithms
           </mat-panel-title>
           <mat-panel-description>
-            <mat-icon (click)="openDialog()">add</mat-icon>
+            <button mat-raised-button class="plus-button" (click)="openDialog()" (click)="buttonHelper = 222" [color]="buttonHelper === 222 ? 'primary' : 'warm'" (click)="selectedIndex = -1"><mat-icon>add</mat-icon></button>
           </mat-panel-description>
         </mat-expansion-panel-header>
         <mat-nav-list *ngFor="let alg of algs">
-          <a mat-raised-button (click)="getAlgs(alg.data.id)" (click)="selectedIndex = alg.data.id" [color]="selectedIndex === alg.data.id ? 'primary' : 'warm'">{{alg.data.title}}</a> <mat-icon class="minus-icon" (click)="removeDialog(alg.data.title)">remove</mat-icon>
+          <a mat-raised-button (click)="getAlgs(alg.data.id)" (click)="selectedIndex = alg.data.id" (click)="buttonHelper = -1"[color]="selectedIndex === alg.data.id ? 'primary' : 'warm'">{{alg.data.title}}</a> 
+          <button mat-raised-button class="minus-button" (click)="removeDialog(alg.data.title)" (click)="buttonHelper = alg.data.id" [color]="buttonHelper === alg.data.id ? 'primary' : 'warm'"> <mat-icon class="minus-icon">remove</mat-icon></button>
         </mat-nav-list>
       </mat-expansion-panel>
     </mat-accordion>
