@@ -7,6 +7,7 @@ import { SwapValueComponent } from "./swap-value/swap-value.component";
 import { HigherValueComponent } from "./higher-value/higher-value.component";
 import { HomeComponent } from "../core/home/home.component";
 import { FibonacciComponent } from "./fibonacci/fibonacci.component";
+import { BarChartComponent } from "./bar-chart/bar-chart.component";
 
 @Injectable({
     providedIn: 'root'
@@ -111,8 +112,12 @@ export class ManagerService {
                 {id: 2}
             ),
             new AlgItem(
-                HomeComponent,
+                BarChartComponent,
                 {id: 3}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 4}
             )
         ];
     }

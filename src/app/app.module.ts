@@ -29,6 +29,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RemoveDialogComponent } from './dialogs/remove-dialog/remove-dialog.component';
 import { FibonacciComponent } from './algorithms/fibonacci/fibonacci.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { BarChartComponent } from './algorithms/bar-chart/bar-chart.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     SolutionDirective,
     AddDialogComponent,
     RemoveDialogComponent,
-    FibonacciComponent
+    FibonacciComponent,
+    BarChartComponent
   ],
   imports: [
     MatFormFieldModule,

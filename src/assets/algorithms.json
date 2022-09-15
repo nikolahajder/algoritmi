@@ -33,6 +33,17 @@
                     "HTML": "/fibonacci/fibonacci.component.html",
                     "CSS": "/fibonacci/fibonacci.component.css"
                 }
+        },
+        {
+            "id": 4,
+            "title": "Bar Chart",
+            "description": "Input an array of numbers separated by commas and display a bar chart for those numbers.",
+            "paths": 
+                {
+                    "TypeScript": "/bar-chart/bar-chart.component.ts",
+                    "HTML": "/bar-chart/bar-chart.component.html",
+                    "CSS": "/bar-chart/bar-chart.component.css"
+                }
         }
     ]
 }
