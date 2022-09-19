@@ -20,11 +20,9 @@ export class BarChartComponent implements OnInit, SolutionComponent {
   htmlCode: string;
   cssCode: string;
   algorithm: IAlgorithm;
-  barChartData: ChartConfiguration<'bar'>['data'];
-  barChartLegend = true;
-  barChartPlugins = [];
 
   constructor(private algorithmService: AlgorithmsService) {
+    this.numbersArray = [];
     this.inputArray = "";
     this.title = "";
     this.description = "";
@@ -58,18 +56,12 @@ export class BarChartComponent implements OnInit, SolutionComponent {
   }
 
   createBarChart() {
-    this.numbersArray = this.inputArray.split(',').map(Number);
-    this.barChartData = {
-      labels: this.numbersArray,
-      datasets: [
-        { data: this.numbersArray, label: "Number value",
-          backgroundColor: ["#9C27B0"]
-      }
-      ]
-    };
+    this.numbersArray = this.inputArray.split(',').map(Number)
   }
 
-  public barChartOptions: ChartConfiguration<'bar'>['options'] = {
-    responsive: false,
-  };
+  randomBarChart() {
+    for (let i=0; i<15; i++){
+      this.numbersArray[i] = Math.floor(Math.random() * 300);
+    }
+  }
 }

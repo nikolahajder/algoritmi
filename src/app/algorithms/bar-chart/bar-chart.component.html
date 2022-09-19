@@ -5,15 +5,15 @@
 <form class="button-form">
     <button class='btn btn-primary' (click)='createBarChart()'> Create
     </button>
+    <button class='btn btn-primary' (click)="randomBarChart()"> Random
+    </button>
 </form>
-<form class="chart-form">
-<canvas baseChart 
-        [data]="barChartData"
-        [options]="barChartOptions"
-        [plugins]="barChartPlugins"
-        [legend]="barChartLegend"
-        [width]="600"
-        [height]="400"
-        [type]="'bar'">
-</canvas>
-</form>
+<div class="chart">
+<table class="table">
+    <tr>
+        <td valign="bottom" *ngFor="let n of numbersArray">
+            <div class='bar' [ngStyle]="{'height' : n + 'px'}"></div>
+        </td>
+    </tr>
+</table>
+</div>
