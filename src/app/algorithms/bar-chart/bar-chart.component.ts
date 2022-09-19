@@ -14,6 +14,7 @@ export class BarChartComponent implements OnInit, SolutionComponent {
 
   inputArray: string;
   numbersArray: number[];
+  negativeArray: number[];
   title: string;
   description: string;
   tsCode: string;
@@ -23,6 +24,7 @@ export class BarChartComponent implements OnInit, SolutionComponent {
 
   constructor(private algorithmService: AlgorithmsService) {
     this.numbersArray = [];
+    this.negativeArray = [];
     this.inputArray = "";
     this.title = "";
     this.description = "";
@@ -56,12 +58,29 @@ export class BarChartComponent implements OnInit, SolutionComponent {
   }
 
   createBarChart() {
-    this.numbersArray = this.inputArray.split(',').map(Number)
+    this.numbersArray = this.inputArray.split(',').map(Number);
+    for (let i = 0; i<this.numbersArray.length; i++){
+      if (this.numbersArray[i] < 0){
+        this.negativeArray[i] = this.numbersArray[i] * -1;
+        this.numbersArray[i] = 0;
+      } else {
+        this.negativeArray[i] = 0;
+      }
+    }
   }
 
   randomBarChart() {
     for (let i=0; i<15; i++){
-      this.numbersArray[i] = Math.floor(Math.random() * 300);
+      this.numbersArray[i] = Math.floor(Math.random() * 300) * (Math.round(Math.random()) ? 1 : -1);
     }
+    for (let i = 0; i<this.numbersArray.length; i++){
+      if (this.numbersArray[i] < 0){
+        this.negativeArray[i] = this.numbersArray[i] * -1;
+        this.numbersArray[i] = 0;
+      } else {
+        this.negativeArray[i] = 0;
+      }
+    }
+
   }
 }

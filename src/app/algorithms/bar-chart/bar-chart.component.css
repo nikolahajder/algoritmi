@@ -62,11 +62,12 @@ textarea {
 
 .bar {
     width: 20px;
-    background-color: #9C27B0;
     margin-left: 10px;
 }
 
 .table {
     align-self: center;
     display:inline-flex;
+    margin-top: 0px;
+    margin-bottom: -1px;
 }

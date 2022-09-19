@@ -12,8 +12,16 @@
 <table class="table">
     <tr>
         <td valign="bottom" *ngFor="let n of numbersArray">
-            <div class='bar' [ngStyle]="{'height' : n + 'px'}"></div>
+            <div class='bar' [ngStyle]="{'height' : n + 'px', 'background-color' : n>0? '#9C27B0' : 'transparent '}"></div>
         </td>
     </tr>
 </table>
+<div class="chart">
+    <table class="table">
+        <tr>
+            <td valign="top" *ngFor="let k of negativeArray">
+                <div class='bar' [ngStyle]="{'height' : k + 'px', 'background-color' : k>0? '#9C27B0' : 'transparent '}"></div>
+            </td>
+        </tr>
+    </table>
 </div>
