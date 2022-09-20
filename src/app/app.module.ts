@@ -32,6 +32,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { BarChartComponent } from './algorithms/bar-chart/bar-chart.component';
 import { NgChartsModule } from 'ng2-charts';
 import { SwapBarsComponent } from './algorithms/swap-bars/swap-bars.component';
+import { SortBarsComponent } from './algorithms/sort-bars/sort-bars.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { SwapBarsComponent } from './algorithms/swap-bars/swap-bars.component';
     RemoveDialogComponent,
     FibonacciComponent,
     BarChartComponent,
-    SwapBarsComponent
+    SwapBarsComponent,
+    SortBarsComponent
   ],
   imports: [
     NgChartsModule,

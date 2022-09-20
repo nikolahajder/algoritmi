@@ -1,21 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SolutionComponent } from 'src/app/solution.component';
 import { IAlgorithm } from '../algorithms';
 import { AlgorithmsService } from '../algorithms.service';
 
 @Component({
-  selector: 'app-swap-bars',
-  templateUrl: './swap-bars.component.html',
-  styleUrls: ['./swap-bars.component.css']
+  selector: 'app-sort-bars',
+  templateUrl: './sort-bars.component.html',
+  styleUrls: ['./sort-bars.component.css']
 })
-export class SwapBarsComponent implements OnInit, SolutionComponent {
+export class SortBarsComponent implements OnInit, SolutionComponent {
   @Input() data: any;
 
-  inputArray: string;
   randomArray: number[];
   negativeArray: number[];
   helperArray: number[];
-  positionArray: number[];
+  interval: number;
   title: string;
   description: string;
   tsCode: string;
@@ -27,8 +26,6 @@ export class SwapBarsComponent implements OnInit, SolutionComponent {
     this.randomArray = [];
     this.negativeArray = [];
     this.helperArray = [];
-    this.positionArray = [];
-    this.inputArray = "";
     this.title = "";
     this.description = "";
     this.tsCode = "";
@@ -60,12 +57,11 @@ export class SwapBarsComponent implements OnInit, SolutionComponent {
     })
   }
 
-  randomBarChart() {
-
+  randomBarChart(){
     for (let i=0; i<15; i++){
       this.randomArray[i] = Math.floor(Math.random() * 250) * (Math.round(Math.random()) ? 1 : -1);
     }
-    
+
     for(let i = 0; i<this.randomArray.length; i++){
       this.helperArray[i] = this.randomArray[i];
     }
@@ -80,15 +76,33 @@ export class SwapBarsComponent implements OnInit, SolutionComponent {
     }
   }
 
-  swapBars(){
-    this.positionArray = this.inputArray.split(',').map(Number);
-    let a = this.positionArray[0] -1;
-    let b = this.positionArray[1] -1;
+  async insertionSort(){
 
-    const temp = this.helperArray[a];
-    this.helperArray[a] = this.helperArray[b];
-    this.helperArray[b] = temp;
+    let i, key, j;
+    for(i = 1; i < this.helperArray.length; i++) {
+      key = this.helperArray[i];
+      j = i - 1;
 
+      while (j >= 0 && this.helperArray[j] > key){
+        this.helperArray[j + 1] = this.helperArray[j];
+        j = j - 1;
+        await new Promise<void>((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, 600)
+      );
+      }
+      this.helperArray[j + 1] = key;
+      await new Promise<void>((resolve) =>
+      setTimeout(() => {
+        resolve();
+      }, 600)
+    );
+    this.barChart();
+    }
+  }
+
+  barChart(){
     for (let i = 0; i<this.helperArray.length; i ++) {
       this.randomArray[i] = this.helperArray[i];
     }

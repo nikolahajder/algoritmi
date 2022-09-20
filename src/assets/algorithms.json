@@ -55,6 +55,17 @@
                     "HTML": "/swap-bars/swap-bars.component.html",
                     "CSS": "/swap-bars/swap-bars.component.css"
                 }
+        },
+        {
+            "id": 6,
+            "title": "Sort Bars",
+            "description": "Sort bar chart from lowest value to highest.",
+            "paths": 
+                {
+                    "TypeScript": "/sort-bars/sort-bars.component.ts",
+                    "HTML": "/sort-bars/sort-bars.component.html",
+                    "CSS": "/sort-bars/sort-bars.component.css"
+                }
         }
     ]
 }
