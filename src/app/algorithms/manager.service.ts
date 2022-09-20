@@ -8,6 +8,7 @@ import { HigherValueComponent } from "./higher-value/higher-value.component";
 import { HomeComponent } from "../core/home/home.component";
 import { FibonacciComponent } from "./fibonacci/fibonacci.component";
 import { BarChartComponent } from "./bar-chart/bar-chart.component";
+import { SwapBarsComponent } from "./swap-bars/swap-bars.component";
 
 @Injectable({
     providedIn: 'root'
@@ -116,8 +117,12 @@ export class ManagerService {
                 {id: 3}
             ),
             new AlgItem(
-                HomeComponent,
+                SwapBarsComponent,
                 {id: 4}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 5}
             )
         ];
     }

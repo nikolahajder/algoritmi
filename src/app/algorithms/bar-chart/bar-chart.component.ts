@@ -71,7 +71,7 @@ export class BarChartComponent implements OnInit, SolutionComponent {
 
   randomBarChart() {
     for (let i=0; i<15; i++){
-      this.numbersArray[i] = Math.floor(Math.random() * 300) * (Math.round(Math.random()) ? 1 : -1);
+      this.numbersArray[i] = Math.floor(Math.random() * 250) * (Math.round(Math.random()) ? 1 : -1);
     }
     for (let i = 0; i<this.numbersArray.length; i++){
       if (this.numbersArray[i] < 0){
@@ -81,6 +81,6 @@ export class BarChartComponent implements OnInit, SolutionComponent {
         this.negativeArray[i] = 0;
       }
     }
-
   }
+  
 }

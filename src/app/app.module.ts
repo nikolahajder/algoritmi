@@ -31,6 +31,7 @@ import { FibonacciComponent } from './algorithms/fibonacci/fibonacci.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BarChartComponent } from './algorithms/bar-chart/bar-chart.component';
 import { NgChartsModule } from 'ng2-charts';
+import { SwapBarsComponent } from './algorithms/swap-bars/swap-bars.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { NgChartsModule } from 'ng2-charts';
     AddDialogComponent,
     RemoveDialogComponent,
     FibonacciComponent,
-    BarChartComponent
+    BarChartComponent,
+    SwapBarsComponent
   ],
   imports: [
     NgChartsModule,

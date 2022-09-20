@@ -1,9 +1,9 @@
 <form class="input-group">
-    <label for="value">Enter numbers:</label>
+    <label for="value">Input the position of bars:</label>
     <input type='string' [(ngModel)]='inputArray' id="value" name="value" />
 </form>
 <form class="button-form">
-    <button class='btn btn-primary' (click)='createBarChart()'> Create
+    <button class='btn btn-primary' (click)='swapBars()'> Swap
     </button>
     <button class='btn btn-primary' (click)="randomBarChart()"> Random
     </button>
@@ -11,9 +11,9 @@
 <div class="chart">
     <table class="table">
         <tr>
-            <td valign="bottom" *ngFor="let n of numbersArray">
+            <td valign="bottom" *ngFor="let r of randomArray">
                 <div class='bar'
-                    [ngStyle]="{'height' : n + 'px', 'background-color' : n>0? '#9C27B0' : 'transparent '}"></div>
+                    [ngStyle]="{'height' : r + 'px', 'background-color' : r>0? '#9C27B0' : 'transparent '}"></div>
             </td>
         </tr>
     </table>

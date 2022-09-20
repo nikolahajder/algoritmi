@@ -44,6 +44,17 @@
                     "HTML": "/bar-chart/bar-chart.component.html",
                     "CSS": "/bar-chart/bar-chart.component.css"
                 }
+        },
+        {
+            "id": 5,
+            "title": "Swap Bars",
+            "description": "Input two numbers that represent position of the bars that need to be switched.",
+            "paths": 
+                {
+                    "TypeScript": "/swap-bars/swap-bars.component.ts",
+                    "HTML": "/swap-bars/swap-bars.component.html",
+                    "CSS": "/swap-bars/swap-bars.component.css"
+                }
         }
     ]
 }
