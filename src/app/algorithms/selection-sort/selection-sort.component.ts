@@ -1,14 +1,14 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SolutionComponent } from 'src/app/solution.component';
 import { IAlgorithm } from '../algorithms';
 import { AlgorithmsService } from '../algorithms.service';
 
 @Component({
-  selector: 'app-sort-bars',
-  templateUrl: './sort-bars.component.html',
-  styleUrls: ['./sort-bars.component.css']
+  selector: 'app-selection-sort',
+  templateUrl: './selection-sort.component.html',
+  styleUrls: ['./selection-sort.component.css']
 })
-export class SortBarsComponent implements OnInit, SolutionComponent {
+export class SelectionSortComponent implements OnInit, SolutionComponent {
   @Input() data: any;
 
   randomArray: number[];
@@ -76,27 +76,27 @@ export class SortBarsComponent implements OnInit, SolutionComponent {
     }
   }
 
-  async insertionSort(){
+  swap(arr, xp, yp) {
+    let temp = arr[xp];
+    arr[xp] = arr[yp];
+    arr[yp] = temp;
+  }
 
-    let i, key, j;
-    for(i = 1; i < this.helperArray.length; i++) {
-      key = this.helperArray[i];
-      j = i - 1;
+  async selectionSort(){
+    let i, j, min_idx;
 
-      while (j >= 0 && this.helperArray[j] > key){
-        this.helperArray[j + 1] = this.helperArray[j];
-        j = j - 1;
-        await new Promise<void>((resolve) =>
-        setTimeout(() => {
-          resolve();
-        }, 150)
-      );
+    for(i = 0; i < this.helperArray.length - 1; i++) {
+      min_idx = i;
+      for (j = i + 1; j < this.helperArray.length; j++) {
+        if (this.helperArray[j] < this.helperArray[min_idx]) {
+          min_idx = j;
+        }
       }
-      this.helperArray[j + 1] = key;
+      this.swap(this.helperArray, min_idx, i);
       await new Promise<void>((resolve) =>
       setTimeout(() => {
         resolve();
-      }, 150)
+      }, 300)
     );
     this.barChart();
     }

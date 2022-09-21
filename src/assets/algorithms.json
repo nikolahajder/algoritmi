@@ -58,13 +58,35 @@
         },
         {
             "id": 6,
-            "title": "Sort Bars",
-            "description": "Sort bar chart from lowest value to highest.",
+            "title": "Insertion Sort",
+            "description": "Using insertion sort, sort bar chart from lowest value to highest.",
             "paths": 
                 {
                     "TypeScript": "/sort-bars/sort-bars.component.ts",
                     "HTML": "/sort-bars/sort-bars.component.html",
                     "CSS": "/sort-bars/sort-bars.component.css"
+                }
+        },
+        {
+            "id": 7,
+            "title": "Bubble Sort",
+            "description": "Using bubble sort, sort bar chart from lowest value to highest.",
+            "paths": 
+                {
+                    "TypeScript": "/bubble-sort/bubble-sort.component.ts",
+                    "HTML": "/bubble-sort/bubble-sort.component.html",
+                    "CSS": "/bubble-sort/bubble-sort.component.css"
+                }
+        },
+        {
+            "id": 8,
+            "title": "Selection Sort",
+            "description": "Using selection sort, sort bar chart from lowest value to highest.",
+            "paths": 
+                {
+                    "TypeScript": "/selection-sort/selection-sort.component.ts",
+                    "HTML": "/selection-sort/selection-sort.component.html",
+                    "CSS": "/selection-sort/selection-sort.component.css"
                 }
         }
     ]

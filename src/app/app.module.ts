@@ -33,6 +33,8 @@ import { BarChartComponent } from './algorithms/bar-chart/bar-chart.component';
 import { NgChartsModule } from 'ng2-charts';
 import { SwapBarsComponent } from './algorithms/swap-bars/swap-bars.component';
 import { SortBarsComponent } from './algorithms/sort-bars/sort-bars.component';
+import { BubbleSortComponent } from './algorithms/bubble-sort/bubble-sort.component';
+import { SelectionSortComponent } from './algorithms/selection-sort/selection-sort.component';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { SortBarsComponent } from './algorithms/sort-bars/sort-bars.component';
     FibonacciComponent,
     BarChartComponent,
     SwapBarsComponent,
-    SortBarsComponent
+    SortBarsComponent,
+    BubbleSortComponent,
+    SelectionSortComponent
   ],
   imports: [
     NgChartsModule,

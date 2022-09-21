@@ -10,6 +10,8 @@ import { FibonacciComponent } from "./fibonacci/fibonacci.component";
 import { BarChartComponent } from "./bar-chart/bar-chart.component";
 import { SwapBarsComponent } from "./swap-bars/swap-bars.component";
 import { SortBarsComponent } from "./sort-bars/sort-bars.component";
+import { BubbleSortComponent } from "./bubble-sort/bubble-sort.component";
+import { SelectionSortComponent } from "./selection-sort/selection-sort.component";
 
 @Injectable({
     providedIn: 'root'
@@ -126,8 +128,16 @@ export class ManagerService {
                 {id: 5}
             ),
             new AlgItem(
-                HomeComponent,
+                BubbleSortComponent,
                 {id: 6}
+            ),
+            new AlgItem(
+                SelectionSortComponent,
+                {id: 7}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 8}
             )
         ];
     }

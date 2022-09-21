@@ -1,0 +1,24 @@
+<form class="button-form">
+    <button class='btn btn-primary' (click)='bubbleSort()'> Sort
+    </button>
+    <button class='btn btn-primary' (click)="randomBarChart()"> Random
+    </button>
+</form>
+<div class="chart">
+    <table class="table">
+        <tr>
+            <td valign="bottom" *ngFor="let r of randomArray">
+                <div class='bar'
+                    [ngStyle]="{'height' : r + 'px', 'background-color' : r>0? '#9C27B0' : 'transparent '}"></div>
+            </td>
+        </tr>
+    </table>
+    <table class="table">
+        <tr>
+            <td valign="top" *ngFor="let n of negativeArray">
+                <div class='bar'
+                    [ngStyle]="{'height' : n + 'px', 'background-color' : n>0? '#9C27B0' : 'transparent '}"></div>
+            </td>
+        </tr>
+    </table>
+</div>
