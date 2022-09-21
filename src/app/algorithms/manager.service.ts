@@ -12,6 +12,7 @@ import { SwapBarsComponent } from "./swap-bars/swap-bars.component";
 import { SortBarsComponent } from "./sort-bars/sort-bars.component";
 import { BubbleSortComponent } from "./bubble-sort/bubble-sort.component";
 import { SelectionSortComponent } from "./selection-sort/selection-sort.component";
+import { HeapSortComponent } from "./heap-sort/heap-sort.component";
 
 @Injectable({
     providedIn: 'root'
@@ -136,8 +137,12 @@ export class ManagerService {
                 {id: 7}
             ),
             new AlgItem(
-                HomeComponent,
+                HeapSortComponent,
                 {id: 8}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 9}
             )
         ];
     }

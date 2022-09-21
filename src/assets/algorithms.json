@@ -88,6 +88,17 @@
                     "HTML": "/selection-sort/selection-sort.component.html",
                     "CSS": "/selection-sort/selection-sort.component.css"
                 }
+        },
+        {
+            "id": 9,
+            "title": "Heap Sort",
+            "description": "Using heap sort, sort bar chart from lowest value to highest.",
+            "paths": 
+                {
+                    "TypeScript": "/heap-sort/heap-sort.component.ts",
+                    "HTML": "/heap-sort/heap-sort.component.html",
+                    "CSS": "/heap-sort/heap-sort.component.css"
+                }
         }
     ]
 }
