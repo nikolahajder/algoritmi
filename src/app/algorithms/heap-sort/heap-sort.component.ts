@@ -80,8 +80,9 @@ export class HeapSortComponent implements OnInit, SolutionComponent {
     var N = this.helperArray.length;
 
     // Build heap (rearrange array)
-    for (var i = Math.floor(N / 2) - 1; i >= 0; i--)
+    for (var i = Math.floor(N / 2) - 1; i >= 0; i--) {
       this.heapify(this.helperArray, N, i);
+    }
 
     // One by one extract an element from heap
     for (var i = N - 1; i > 0; i--) {
@@ -93,11 +94,11 @@ export class HeapSortComponent implements OnInit, SolutionComponent {
       // call max heapify on the reduced heap
       this.heapify(this.helperArray, i, 0);
       await new Promise<void>((resolve) =>
-      setTimeout(() => {
-        resolve();
-      }, 200)
-    );
-    this.barChart();
+        setTimeout(() => {
+          resolve();
+        }, 200)
+      );
+      this.barChart();
     }
   }
 

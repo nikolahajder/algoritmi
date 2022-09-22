@@ -99,6 +99,17 @@
                     "HTML": "/heap-sort/heap-sort.component.html",
                     "CSS": "/heap-sort/heap-sort.component.css"
                 }
+        },
+        {
+            "id": 10,
+            "title": "Quick Sort",
+            "description": "Using quick sort, sort bar chart from lowest value to highest.",
+            "paths": 
+                {
+                    "TypeScript": "/quick-sort/quick-sort.component.ts",
+                    "HTML": "/quick-sort/quick-sort.component.html",
+                    "CSS": "/quick-sort/quick-sort.component.css"
+                }
         }
     ]
 }

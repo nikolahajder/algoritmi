@@ -1,0 +1,76 @@
+.text-center {
+    text-align: center;
+    padding: 50px 0 50px;
+}
+
+.input-group {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+}
+
+.output-group {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    padding-left: 30px;
+}
+
+label {
+    display: inline-block;
+    clear: left;
+    width: 250px;
+    text-align: left;
+}
+
+input {
+    display: inline-block;
+}
+
+.button-form {
+    min-width: 150px;
+    max-width: 250px;
+    width: 100%;
+    padding: 30px;
+    margin-top: -30px;
+    float: left;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    margin-right: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 1000px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    background: transparent;
+    font-size: 16px;
+    resize: none;
+    color: white;
+}
+
+.chart {
+    height: 500px;
+    width:800px; 
+    margin:0 auto;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.bar {
+    width: 20px;
+    margin-left: 3px;
+}
+
+.table {
+    align-self: center;
+    display:inline-flex;
+    margin-top: 0px;
+    margin-bottom: -1px;
+}

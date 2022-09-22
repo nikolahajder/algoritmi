@@ -100,6 +100,24 @@ export class BubbleSortComponent implements OnInit, SolutionComponent{
     }
   }
 
+  async bubbleSort1(){
+
+    let i, j;
+    for (i = 0; i < this.helperArray.length - 1; i++) {
+      for (j = i + 1; j < this.helperArray.length; j++) {
+        if (this.helperArray[i] > this.helperArray[j]) {
+          this.swap(this.helperArray, i, j);
+        }
+      }
+      await new Promise<void>((resolve) =>
+      setTimeout(() => {
+        resolve();
+      }, 300)
+    );
+    this.barChart();
+    }
+  }
+
   barChart(){
     for (let i = 0; i<this.helperArray.length; i ++) {
       this.randomArray[i] = this.helperArray[i];
