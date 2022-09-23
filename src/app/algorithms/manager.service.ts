@@ -14,6 +14,7 @@ import { BubbleSortComponent } from "./bubble-sort/bubble-sort.component";
 import { SelectionSortComponent } from "./selection-sort/selection-sort.component";
 import { HeapSortComponent } from "./heap-sort/heap-sort.component";
 import { QuickSortComponent } from "./quick-sort/quick-sort.component";
+import { BinaryDigitsComponent } from "./binary-digits/binary-digits.component";
 
 @Injectable({
     providedIn: 'root'
@@ -143,11 +144,15 @@ export class ManagerService {
             ),
             new AlgItem(
                 QuickSortComponent,
-                {id: 8}
+                {id: 9}
+            ),
+            new AlgItem(
+                BinaryDigitsComponent,
+                {id: 10}
             ),
             new AlgItem(
                 HomeComponent,
-                {id: 10}
+                {id: 11}
             )
         ];
     }

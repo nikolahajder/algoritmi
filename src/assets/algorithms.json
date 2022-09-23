@@ -110,6 +110,17 @@
                     "HTML": "/quick-sort/quick-sort.component.html",
                     "CSS": "/quick-sort/quick-sort.component.css"
                 }
+        },
+        {
+            "id": 11,
+            "title": "Binary Digits",
+            "description": "Enter an integer number and calcuate how many binary digits it requires to display in binary.",
+            "paths": 
+                {
+                    "TypeScript": "/binary-digits/binary-digits.component.ts",
+                    "HTML": "/binary-digits/binary-digits.component.html",
+                    "CSS": "/binary-digits/binary-digits.component.css"
+                }
         }
     ]
 }

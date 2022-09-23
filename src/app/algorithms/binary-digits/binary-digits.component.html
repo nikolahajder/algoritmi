@@ -1,0 +1,12 @@
+<form class="input-group">
+    <label for="value">Enter an integer number:</label>
+    <input type='number' [(ngModel)]='inputNumber' id="value" name="value" />
+</form>
+<form class="output-group">
+    <label for="output">Number of binary digits required: {{binary}}</label>
+    <!-- <label type='number' id="output" name="output">5</label> -->
+</form>
+<form class="button-form">
+    <button class='btn btn-primary' (click)='calculateBinary()'> Calculate
+    </button>
+</form>

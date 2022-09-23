@@ -37,6 +37,7 @@ import { BubbleSortComponent } from './algorithms/bubble-sort/bubble-sort.compon
 import { SelectionSortComponent } from './algorithms/selection-sort/selection-sort.component';
 import { HeapSortComponent } from './algorithms/heap-sort/heap-sort.component';
 import { QuickSortComponent } from './algorithms/quick-sort/quick-sort.component';
+import { BinaryDigitsComponent } from './algorithms/binary-digits/binary-digits.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { QuickSortComponent } from './algorithms/quick-sort/quick-sort.component
     BubbleSortComponent,
     SelectionSortComponent,
     HeapSortComponent,
-    QuickSortComponent
+    QuickSortComponent,
+    BinaryDigitsComponent
   ],
   imports: [
     NgChartsModule,
