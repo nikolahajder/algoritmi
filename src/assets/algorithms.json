@@ -121,6 +121,17 @@
                     "HTML": "/binary-digits/binary-digits.component.html",
                     "CSS": "/binary-digits/binary-digits.component.css"
                 }
+        },
+        {
+            "id": 12,
+            "title": "Binary Search",
+            "description": "Enter a range of numbers and imagine an integer number within that range, the algorithm will tell you the highest number of guesses it needs to guess the number you imagined. It will also start a binary search of the number.",
+            "paths": 
+                {
+                    "TypeScript": "/binary-search/binary-search.component.ts",
+                    "HTML": "/binary-search/binary-search.component.html",
+                    "CSS": "/binary-search/binary-search.component.css"
+                }
         }
     ]
 }

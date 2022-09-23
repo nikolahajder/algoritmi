@@ -1,0 +1,21 @@
+<form class="input-group">
+    <label for="value">Enter a range of numbers:</label>
+    <input type='string' [(ngModel)]='inputRange' id="value" name="value" />
+</form>
+<form class="button-form">
+    <button class='btn btn-primary' (click)='binarySearch()' (click)='calculateBinary()'> Start
+    </button>
+</form>
+<form class="output-group">
+    <label for="output">The highest numbers of attempts to guess your number is: {{binary}}</label>
+    <label for="output">Is your imagined number: {{guess}}?</label>
+    <label for="output">Current number of attempts {{nAttemps}}</label>
+</form>
+<form class="button-form">
+    <button class='btn btn-primary'> Yes
+    </button>
+    <button class='btn btn-primary' (click)="calculateHigher()"> Higher
+    </button>
+    <button class='btn btn-primary' (click)="calculateLower()"> Lower
+    </button>
+</form>
