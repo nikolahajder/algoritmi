@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SolutionComponent } from 'src/app/solution.component';
 import { IAlgorithm } from '../algorithms';
 import { AlgorithmsService } from '../algorithms.service';
+import { UtilityPause } from '../utilityPause';
 
 @Component({
     selector: 'app-quick-sort',
@@ -93,11 +94,7 @@ export class QuickSortComponent implements OnInit, SolutionComponent {
         let i = (low - 1);
 
         for (let j = low; j <= high - 1; j++) {
-            await new Promise<void>((resolve) =>
-                setTimeout(() => {
-                    resolve();
-                }, 150)
-            );
+            await UtilityPause.pause();
             this.barChart();
             // If current element is smaller
             // than the pivot
@@ -111,11 +108,7 @@ export class QuickSortComponent implements OnInit, SolutionComponent {
 
         }
         this.swap(arr, i + 1, high);
-        await new Promise<void>((resolve) =>
-                setTimeout(() => {
-                    resolve();
-                }, 150)
-            );
+        await UtilityPause.pause();
             this.barChart();
         return (i + 1);
     }

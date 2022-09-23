@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SolutionComponent } from 'src/app/solution.component';
 import { IAlgorithm } from '../algorithms';
 import { AlgorithmsService } from '../algorithms.service';
+import { UtilityPause } from '../utilityPause';
 
 @Component({
   selector: 'app-selection-sort',
@@ -93,11 +94,7 @@ export class SelectionSortComponent implements OnInit, SolutionComponent {
         }
       }
       this.swap(this.helperArray, min_idx, i);
-      await new Promise<void>((resolve) =>
-      setTimeout(() => {
-        resolve();
-      }, 300)
-    );
+      await UtilityPause.pause();
     this.barChart();
     }
   }

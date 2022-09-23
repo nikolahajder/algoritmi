@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { SolutionComponent } from 'src/app/solution.component';
 import { IAlgorithm } from '../algorithms';
 import { AlgorithmsService } from '../algorithms.service';
+import { UtilityPause } from '../utilityPause';
 
 @Component({
   selector: 'app-sort-bars',
@@ -86,18 +87,10 @@ export class SortBarsComponent implements OnInit, SolutionComponent {
       while (j >= 0 && this.helperArray[j] > key){
         this.helperArray[j + 1] = this.helperArray[j];
         j = j - 1;
-        await new Promise<void>((resolve) =>
-        setTimeout(() => {
-          resolve();
-        }, 50)
-      );
+        await UtilityPause.pause();
       }
       this.helperArray[j + 1] = key;
-      await new Promise<void>((resolve) =>
-      setTimeout(() => {
-        resolve();
-      }, 50)
-    );
+      await UtilityPause.pause();
     this.barChart();
     }
   }

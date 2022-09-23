@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SolutionComponent } from 'src/app/solution.component';
 import { IAlgorithm } from '../algorithms';
 import { AlgorithmsService } from '../algorithms.service';
+import { UtilityPause } from '../utilityPause';
 
 @Component({
   selector: 'app-heap-sort',
@@ -93,11 +94,7 @@ export class HeapSortComponent implements OnInit, SolutionComponent {
 
       // call max heapify on the reduced heap
       this.heapify(this.helperArray, i, 0);
-      await new Promise<void>((resolve) =>
-        setTimeout(() => {
-          resolve();
-        }, 200)
-      );
+      await UtilityPause.pause();
       this.barChart();
     }
   }

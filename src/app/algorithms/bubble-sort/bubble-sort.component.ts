@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SolutionComponent } from 'src/app/solution.component';
 import { IAlgorithm } from '../algorithms';
 import { AlgorithmsService } from '../algorithms.service';
+import { UtilityPause } from '../utilityPause';
 
 @Component({
   selector: 'app-bubble-sort',
@@ -86,34 +87,12 @@ export class BubbleSortComponent implements OnInit, SolutionComponent{
 
     let i, j;
     for (i = 0; i < this.helperArray.length - 1; i++) {
-      for (j = 0; j < this.helperArray.length-i-1; j++) {
-        if (this.helperArray[j] > this.helperArray[j + 1]) {
-          this.swap(this.helperArray, j, j+1);
-        }
-      }
-      await new Promise<void>((resolve) =>
-      setTimeout(() => {
-        resolve();
-      }, 300)
-    );
-    this.barChart();
-    }
-  }
-
-  async bubbleSort1(){
-
-    let i, j;
-    for (i = 0; i < this.helperArray.length - 1; i++) {
       for (j = i + 1; j < this.helperArray.length; j++) {
         if (this.helperArray[i] > this.helperArray[j]) {
           this.swap(this.helperArray, i, j);
         }
       }
-      await new Promise<void>((resolve) =>
-      setTimeout(() => {
-        resolve();
-      }, 300)
-    );
+      await UtilityPause.pause();
     this.barChart();
     }
   }
