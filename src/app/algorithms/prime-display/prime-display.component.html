@@ -1,1 +1,14 @@
-<p>prime-display works!</p>
+<form class="input-group">
+    <label for="value">Enter a value:</label>
+    <input type='number' [(ngModel)]='value' (ngModelChange)="onChange($event)" id="value" name="value" />
+</form>
+<form class="button-form">
+    <button class='btn btn-primary' (click)='findPrimeNumber()'> Enter
+    </button>
+</form>
+<form class="output-group" *ngIf="displaySolution">
+    <label for="output">{{value}}. prime number is: {{solution}}</label>
+</form>
+<form class="output-group" *ngIf="displayError">
+    <label for="output">You must enter a number greater or equal to 1.</label>
+</form>
