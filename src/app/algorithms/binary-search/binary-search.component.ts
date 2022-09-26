@@ -11,6 +11,10 @@ import { AlgorithmsService } from '../algorithms.service';
 export class BinarySearchComponent implements OnInit, SolutionComponent {
   @Input() data: any;
 
+  elements: number[];
+  displayLogic: boolean;
+  displayGuess: boolean;
+  displayHelp: boolean;
   nAttemps: number;
   min: number;
   max: number;
@@ -26,6 +30,10 @@ export class BinarySearchComponent implements OnInit, SolutionComponent {
   algorithm: IAlgorithm;
 
   constructor(private algorithmService: AlgorithmsService) {
+    this.elements=[0];
+    this.displayGuess = false;
+    this.displayLogic = false;
+    this.displayHelp = false;
     this.inputRange = "";
     this.nAttemps = 0;
     this.binary = 0;
@@ -62,36 +70,68 @@ export class BinarySearchComponent implements OnInit, SolutionComponent {
   }
 
   binarySearch() {
+    this.nAttemps = 0;
     this.nAttemps++;
     this.rangeArray = this.inputRange.split('-').map(Number);
-    this.min = this.rangeArray[0];
-    this.max = this.rangeArray[1];
+    if (typeof this.rangeArray[0] ==='number' && typeof this.rangeArray[1] ==='number') {
+      this.min = this.rangeArray[0];
+      this.max = this.rangeArray[1];
+      this.guess = Math.floor((this.min + this.max) / 2);
+      this.displayLogic = true;
+      this.displayHelp = false;
+    } else {
+      this.displayHelp = true;
+    }
     this.tryGuess(this.min, this.max);
   }
 
   calculateBinary() {
-    for (let i = 0;; i++) {
-      if (Math.pow(2, i) > this.rangeArray[1]){
-        this.binary = i;
-        return;
+    if (typeof this.rangeArray[1] === 'number') {
+      for (let i = 0; ; i++) {
+        if (Math.pow(2, i) > this.rangeArray[1]) {
+          this.binary = i;
+          return;
+        }
       }
     }
   }
 
-  tryGuess(min, max){
-    this.guess = Math.floor((min + max)/2);
+  tryGuess(min, max) {
+    if (this.elements[0] === 0){
+      this.elements = [];
+      this.elements[0] = Math.floor((min + max) / 2);
+    } else {
+    this.guess = Math.floor((min + max) / 2);
+    this.elements.push(this.guess);
+    }
   }
 
 
   calculateHigher() {
-    this.nAttemps++;
-    this.min = Math.floor((this.min + this.max)/2) + 1;
+    if (this.nAttemps < this.binary) {
+      this.nAttemps++;
+    }
+    this.min = Math.floor((this.min + this.max) / 2) + 1;
     this.tryGuess(this.min, this.max);
   }
 
-  calculateLower(){
-    this.nAttemps++;
-    this.max = Math.floor((this.min + this.max)/2) - 1;
+  calculateLower() {
+    if (this.nAttemps < this.binary) {
+      this.nAttemps++;
+    }
+    this.max = Math.floor((this.min + this.max) / 2) - 1;
     this.tryGuess(this.min, this.max);
+  }
+
+  numberGuessed() {
+    this.displayGuess = true;
+  }
+
+  resetNumber() {
+    this.rangeArray = [];
+    this.displayLogic = false;
+    this.displayGuess = false;
+    this.nAttemps = 0;
+    this.elements = [0];
   }
 }

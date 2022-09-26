@@ -6,16 +6,33 @@
     <button class='btn btn-primary' (click)='binarySearch()' (click)='calculateBinary()'> Start
     </button>
 </form>
-<form class="output-group">
-    <label for="output">The highest numbers of attempts to guess your number is: {{binary}}</label>
-    <label for="output">Is your imagined number: {{guess}}?</label>
-    <label for="output">Current number of attempts {{nAttemps}}</label>
+<form *ngIf="displayLogic" class="output-group">
+    <label>The highest numbers of attempts to guess your number is: {{binary}}</label>
 </form>
-<form class="button-form">
-    <button class='btn btn-primary'> Yes
-    </button>
-    <button class='btn btn-primary' (click)="calculateHigher()"> Higher
-    </button>
-    <button class='btn btn-primary' (click)="calculateLower()"> Lower
-    </button>
+<form *ngIf="displayLogic">
+    <form *ngFor="let e of elements">
+        <form class="output-group">
+            <label for="output">Is your imagined number: {{e}}?</label>
+        </form>
+        <form class="button-form">
+            <button class='btn btn-primary' (click)="numberGuessed()"> Yes
+            </button>
+            <button class='btn btn-primary' (click)="calculateHigher()"> Higher
+            </button>
+            <button class='btn btn-primary' (click)="calculateLower()"> Lower
+            </button>
+        </form>
+    </form>
+</form>
+<form *ngIf="displayGuess">
+    <form class="output-group">
+        <label>I've guessed your number in: {{nAttemps}} attempts!</label>
+    </form>
+    <form class="button-form">
+        <button class='btn btn-primary' (click)="resetNumber()"> Reset
+        </button>
+    </form>
+</form>
+<form class="output-group" *ngIf="displayHelp">
+    <label>Input integers in this format: "integer1-integer2"!</label>
 </form>
