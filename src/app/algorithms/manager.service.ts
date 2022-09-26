@@ -16,6 +16,9 @@ import { HeapSortComponent } from "./heap-sort/heap-sort.component";
 import { QuickSortComponent } from "./quick-sort/quick-sort.component";
 import { BinaryDigitsComponent } from "./binary-digits/binary-digits.component";
 import { BinarySearchComponent } from "./binary-search/binary-search.component";
+import { PrimeCheckComponent } from "./prime-check/prime-check.component";
+import { PrimeFindComponent } from "./prime-find/prime-find.component";
+import { PrimeDisplayComponent } from "./prime-display/prime-display.component";
 
 @Injectable({
     providedIn: 'root'
@@ -156,8 +159,20 @@ export class ManagerService {
                 {id: 11}
             ),
             new AlgItem(
-                HomeComponent,
+                PrimeCheckComponent,
                 {id: 12}
+            ),
+            new AlgItem(
+                PrimeFindComponent,
+                {id: 13}
+            ),
+            new AlgItem(
+                PrimeDisplayComponent,
+                {id: 14}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 15}
             )
         ];
     }

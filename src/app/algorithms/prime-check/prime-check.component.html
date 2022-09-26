@@ -1,0 +1,20 @@
+<form class="input-group">
+    <label for="value">Enter a value:</label>
+    <input type='number' [(ngModel)]='value' (ngModelChange)="onChange($event)" id="value" name="value" />
+</form>
+<form class="button-form">
+    <button class='btn btn-primary' (click)='primeCheck()'> Enter
+    </button>
+</form>
+<form class="output-group" *ngIf="isNotPrime">
+    <label>Number {{value}} is not a prime number.</label>
+</form>
+<form class="output-group" *ngIf="isPrime">
+    <label>Number {{value}} is a prime number.</label>
+</form>
+<form class="output-group" *ngIf="isOne">
+    <label>1 is neither prime nor composite number</label>
+</form>
+<form class="output-group" *ngIf="isError">
+    <label>You must enter a whole number that is greater than 1.</label>
+</form>

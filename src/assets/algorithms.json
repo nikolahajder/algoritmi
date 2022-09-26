@@ -132,6 +132,39 @@
                     "HTML": "/binary-search/binary-search.component.html",
                     "CSS": "/binary-search/binary-search.component.css"
                 }
+        },
+        {
+            "id": 13,
+            "title": "Prime Check",
+            "description": "Enter an integer number and respond whether it is a prime number or not.",
+            "paths": 
+                {
+                    "TypeScript": "/prime-check/prime-check.component.ts",
+                    "HTML": "/prime-check/prime-check.component.html",
+                    "CSS": "/prime-check/prime-check.component.css"
+                }
+        },
+        {
+            "id": 14,
+            "title": "Prime Find",
+            "description": "Enter a number and display that many of first prime numbers.",
+            "paths": 
+                {
+                    "TypeScript": "/prime-find/prime-find.component.ts",
+                    "HTML": "/prime-find/prime-find.component.html",
+                    "CSS": "/prime-find/prime-find.component.css"
+                }
+        },
+        {
+            "id": 15,
+            "title": "Prime Display",
+            "description": "Enter a number n and display n-th prime number.",
+            "paths": 
+                {
+                    "TypeScript": "/prime-display/prime-display.component.ts",
+                    "HTML": "/prime-display/prime-display.component.html",
+                    "CSS": "/prime-display/prime-display.component.css"
+                }
         }
     ]
 }

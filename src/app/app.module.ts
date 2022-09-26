@@ -39,6 +39,9 @@ import { HeapSortComponent } from './algorithms/heap-sort/heap-sort.component';
 import { QuickSortComponent } from './algorithms/quick-sort/quick-sort.component';
 import { BinaryDigitsComponent } from './algorithms/binary-digits/binary-digits.component';
 import { BinarySearchComponent } from './algorithms/binary-search/binary-search.component';
+import { PrimeCheckComponent } from './algorithms/prime-check/prime-check.component';
+import { PrimeFindComponent } from './algorithms/prime-find/prime-find.component';
+import { PrimeDisplayComponent } from './algorithms/prime-display/prime-display.component';
 
 
 @NgModule({
@@ -61,7 +64,10 @@ import { BinarySearchComponent } from './algorithms/binary-search/binary-search.
     HeapSortComponent,
     QuickSortComponent,
     BinaryDigitsComponent,
-    BinarySearchComponent
+    BinarySearchComponent,
+    PrimeCheckComponent,
+    PrimeFindComponent,
+    PrimeDisplayComponent
   ],
   imports: [
     NgChartsModule,
