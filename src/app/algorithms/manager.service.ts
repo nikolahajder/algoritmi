@@ -19,6 +19,7 @@ import { BinarySearchComponent } from "./binary-search/binary-search.component";
 import { PrimeCheckComponent } from "./prime-check/prime-check.component";
 import { PrimeFindComponent } from "./prime-find/prime-find.component";
 import { PrimeDisplayComponent } from "./prime-display/prime-display.component";
+import { PrimeNumberFindComponent } from "./prime-number-find/prime-number-find.component";
 
 @Injectable({
     providedIn: 'root'
@@ -171,8 +172,12 @@ export class ManagerService {
                 {id: 14}
             ),
             new AlgItem(
-                HomeComponent,
+                PrimeNumberFindComponent,
                 {id: 15}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 16}
             )
         ];
     }

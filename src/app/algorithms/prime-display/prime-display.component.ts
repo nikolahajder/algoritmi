@@ -64,9 +64,9 @@ export class PrimeDisplayComponent implements OnInit, SolutionComponent {
   }
 
   findPrimeNumber() {
-    if(this.value >= 1) {
-    this.displaySolution = true;
-    this.primeNumbers = [];
+    if (this.value >= 1) {
+      this.displaySolution = true;
+      this.primeNumbers = [];
       for (let i = 1; this.primeNumbers.length < this.value; i++) {
         if (this.isPrime(i)) {
           this.primeNumbers.push(i);
@@ -79,13 +79,22 @@ export class PrimeDisplayComponent implements OnInit, SolutionComponent {
     }
   }
 
-  isPrime(n: number) {
-    if (n == 1 || n == 0) return false;
-
-    for (var i = 2; i < n; i++) {
-      if (n % i == 0) return false;
+  isPrime(value: number) {
+    if (value === 1) {
+      return false;
     }
-    return true;
+    if (value === 2) {
+      return true;
+    } else {
+      if (value % 2 === 0) {
+        return false;
+      }
+      debugger;
+      for (let i = 0; this.primeNumbers[i] <= Math.sqrt(value); i++) {
+        if (value % this.primeNumbers[i] === 0) return false;
+      }
+      return true;
+    }
   }
 
   onChange(newValue) {

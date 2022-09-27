@@ -8,7 +8,7 @@
 </form>
 <form class="output-group" *ngIf="displaySolution">
     <label for="output">Prime numbers in given range are:</label>
-    <label type='number' *ngFor="let o of primeNumbers" id="output" name="output">{{o}}</label>
+    <label type='number' *ngFor="let o of primeArray" id="output" name="output">{{o}}</label>
 </form>
 <form class="output-group" *ngIf="displayError">
     <label for="output">Input integers in this format: "integer1-integer2"!</label>

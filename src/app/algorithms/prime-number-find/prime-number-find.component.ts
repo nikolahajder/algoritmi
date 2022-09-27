@@ -4,18 +4,19 @@ import { IAlgorithm } from '../algorithms';
 import { AlgorithmsService } from '../algorithms.service';
 
 @Component({
-  selector: 'app-prime-find',
-  templateUrl: './prime-find.component.html',
-  styleUrls: ['./prime-find.component.css']
+  selector: 'app-prime-number-find',
+  templateUrl: './prime-number-find.component.html',
+  styleUrls: ['./prime-number-find.component.css']
 })
-export class PrimeFindComponent implements OnInit, SolutionComponent {
+export class PrimeNumberFindComponent implements OnInit, SolutionComponent {
   @Input() data: any;
 
   inputRange: string;
   nPrime: number;
   displaySolution: boolean;
   displayError: boolean;
-  primeNumbers: number[];
+  primeNumbers: boolean[];
+  primeArray: number[];
   rangeArray: number[];
   output: number;
   title: string;
@@ -27,6 +28,7 @@ export class PrimeFindComponent implements OnInit, SolutionComponent {
 
   constructor(private algorithmService: AlgorithmsService) {
     this.primeNumbers = [];
+    this.primeArray = [];
     this.displaySolution = false;
     this.displayError = false;
     this.inputRange = "";
@@ -68,35 +70,24 @@ export class PrimeFindComponent implements OnInit, SolutionComponent {
     this.rangeArray = this.inputRange.split('-').map(Number);
     if (typeof this.rangeArray[0] === 'number' && typeof this.rangeArray[1] === 'number') {
       this.primeNumbers = [];
-      let start = Date.now();
       for (let i = this.rangeArray[0]; i <= this.rangeArray[1]; i++) {
-        if (this.isPrime(i)) {
-          this.primeNumbers.push(i);
-          this.nPrime++;
+        this.primeNumbers.push(true);
+      }
+      for(let inc = 2; inc < Math.sqrt(this.rangeArray[1]); inc++) {
+        for (let j = inc * inc; j <= this.rangeArray[1]; j+=inc) {
+            if (this.primeNumbers[j] === true) this.primeNumbers[j] = false;
         }
       }
-      let end = Date.now();
-      alert(end - start);
       this.displaySolution = true;
+      for (let i = 0; i < this.primeNumbers.length; i++) {
+        if (this.primeNumbers[i] && i != 0) {
+            this.primeArray.push(i);
+        }
+      }
+
     } else {
       this.displayError = true;
     }
-  }
-
-  isPrime(value: number) {
-    if (value === 1) {
-        return false;
-    }
-    if (value === 2) {
-        return true;
-    }
-    if (value % 2 === 0) {
-        return false;
-    }
-    for (let i = 3; i <= Math.sqrt(value); i += 2) {
-        if (value % i === 0) return false;
-    }
-    return true;
   }
 
   onChange(newValue) {

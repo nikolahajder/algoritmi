@@ -42,6 +42,7 @@ import { BinarySearchComponent } from './algorithms/binary-search/binary-search.
 import { PrimeCheckComponent } from './algorithms/prime-check/prime-check.component';
 import { PrimeFindComponent } from './algorithms/prime-find/prime-find.component';
 import { PrimeDisplayComponent } from './algorithms/prime-display/prime-display.component';
+import { PrimeNumberFindComponent } from './algorithms/prime-number-find/prime-number-find.component';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { PrimeDisplayComponent } from './algorithms/prime-display/prime-display.
     BinarySearchComponent,
     PrimeCheckComponent,
     PrimeFindComponent,
-    PrimeDisplayComponent
+    PrimeDisplayComponent,
+    PrimeNumberFindComponent
   ],
   imports: [
     NgChartsModule,
