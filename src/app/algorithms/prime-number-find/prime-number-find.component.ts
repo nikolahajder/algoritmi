@@ -79,8 +79,8 @@ export class PrimeNumberFindComponent implements OnInit, SolutionComponent {
         }
       }
       this.displaySolution = true;
-      for (let i = 0; i < this.primeNumbers.length; i++) {
-        if (this.primeNumbers[i] && i != 0) {
+      for (let i = 2; i < this.primeNumbers.length; i++) {
+        if (this.primeNumbers[i]) {
             this.primeArray.push(i);
         }
       }

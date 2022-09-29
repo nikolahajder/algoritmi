@@ -20,6 +20,8 @@ import { PrimeCheckComponent } from "./prime-check/prime-check.component";
 import { PrimeFindComponent } from "./prime-find/prime-find.component";
 import { PrimeDisplayComponent } from "./prime-display/prime-display.component";
 import { PrimeNumberFindComponent } from "./prime-number-find/prime-number-find.component";
+import { StringContainerComponent } from "./string-container/string-container.component";
+import { SubstringComponent } from "./substring/substring.component";
 
 @Injectable({
     providedIn: 'root'
@@ -176,8 +178,16 @@ export class ManagerService {
                 {id: 15}
             ),
             new AlgItem(
-                HomeComponent,
+                StringContainerComponent,
                 {id: 16}
+            ),
+            new AlgItem(
+                SubstringComponent,
+                {id: 17}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 18}
             )
         ];
     }

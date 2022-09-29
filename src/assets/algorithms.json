@@ -169,12 +169,34 @@
         {
             "id": 16,
             "title": "Prime number find",
-            "description": "Enter a number n and display n-th prime number.",
+            "description": "Using sieve of Eratosthenes, enter a range of numbers and display all prime numbers within that range..",
             "paths": 
                 {
                     "TypeScript": "/prime-number-find/prime-number-find.component.ts",
-                    "HTML": "/pprime-number-find/prime-number-find.component.html",
+                    "HTML": "/prime-number-find/prime-number-find.component.html",
                     "CSS": "/prime-number-find/prime-number-find.component.css"
+                }
+        },
+        {
+            "id": 17,
+            "title": "String container",
+            "description": "Enter two strings and determine does the second string contain the first one or not.",
+            "paths": 
+                {
+                    "TypeScript": "/string-container/string-container.component.ts",
+                    "HTML": "/string-container/string-container.component.html",
+                    "CSS": "/string-container/string-container.component.css"
+                }
+        },
+        {
+            "id": 18,
+            "title": "Substring",
+            "description": "Enter two strings and find the longest substring between those strings.",
+            "paths": 
+                {
+                    "TypeScript": "/substring/substring.component.ts",
+                    "HTML": "/substring/substring.component.html",
+                    "CSS": "/substring/substring.component.css"
                 }
         }
     ]

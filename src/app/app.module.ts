@@ -43,6 +43,8 @@ import { PrimeCheckComponent } from './algorithms/prime-check/prime-check.compon
 import { PrimeFindComponent } from './algorithms/prime-find/prime-find.component';
 import { PrimeDisplayComponent } from './algorithms/prime-display/prime-display.component';
 import { PrimeNumberFindComponent } from './algorithms/prime-number-find/prime-number-find.component';
+import { StringContainerComponent } from './algorithms/string-container/string-container.component';
+import { SubstringComponent } from './algorithms/substring/substring.component';
 
 
 @NgModule({
@@ -69,7 +71,9 @@ import { PrimeNumberFindComponent } from './algorithms/prime-number-find/prime-n
     PrimeCheckComponent,
     PrimeFindComponent,
     PrimeDisplayComponent,
-    PrimeNumberFindComponent
+    PrimeNumberFindComponent,
+    StringContainerComponent,
+    SubstringComponent
   ],
   imports: [
     NgChartsModule,
