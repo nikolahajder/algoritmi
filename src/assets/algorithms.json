@@ -190,8 +190,8 @@
         },
         {
             "id": 18,
-            "title": "Substring",
-            "description": "Enter two strings and find the longest substring between those strings.",
+            "title": "Subsequence",
+            "description": "Return the longest subsequence that 2 strings share.",
             "paths": 
                 {
                     "TypeScript": "/substring/substring.component.ts",
