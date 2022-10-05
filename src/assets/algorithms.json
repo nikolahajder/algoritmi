@@ -190,13 +190,35 @@
         },
         {
             "id": 18,
-            "title": "Subsequence",
+            "title": "Substring",
             "description": "Return the longest subsequence that 2 strings share.",
             "paths": 
                 {
                     "TypeScript": "/substring/substring.component.ts",
                     "HTML": "/substring/substring.component.html",
                     "CSS": "/substring/substring.component.css"
+                }
+        },
+        {
+            "id": 19,
+            "title": "Subsequence",
+            "description": "Return the longest subsequence that 2 strings share.",
+            "paths": 
+                {
+                    "TypeScript": "/subsequence/subsequence.component.ts",
+                    "HTML": "/subsequence/subsequence.component.html",
+                    "CSS": "/subsequence/subsequence.component.css"
+                }
+        },
+        {
+            "id": 20,
+            "title": "Mass Murder",
+            "description": "Enter a number of people who stand in a circle. Starting from person 1, every person kills the person standing next to him. Determine who is the last person standing.",
+            "paths": 
+                {
+                    "TypeScript": "/mass-murder/mass-murder.component.ts",
+                    "HTML": "/mass-murder/mass-murder.component.html",
+                    "CSS": "/mass-murder/mass-murder.component.css"
                 }
         }
     ]

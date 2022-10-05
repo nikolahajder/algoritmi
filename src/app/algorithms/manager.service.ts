@@ -22,6 +22,8 @@ import { PrimeDisplayComponent } from "./prime-display/prime-display.component";
 import { PrimeNumberFindComponent } from "./prime-number-find/prime-number-find.component";
 import { StringContainerComponent } from "./string-container/string-container.component";
 import { SubstringComponent } from "./substring/substring.component";
+import { MassMurderComponent } from "./mass-murder/mass-murder.component";
+import { SubsequenceComponent } from "./subsequence/subsequence.component";
 
 @Injectable({
     providedIn: 'root'
@@ -186,8 +188,16 @@ export class ManagerService {
                 {id: 17}
             ),
             new AlgItem(
-                HomeComponent,
+                SubsequenceComponent,
                 {id: 18}
+            ),
+            new AlgItem(
+                MassMurderComponent,
+                {id: 19}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 20}
             )
         ];
     }

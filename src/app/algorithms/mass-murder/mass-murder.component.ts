@@ -1,24 +1,22 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { first } from 'rxjs';
+import { LinkedList } from 'src/app/linked-list';
 import { SolutionComponent } from 'src/app/solution.component';
 import { IAlgorithm } from '../algorithms';
 import { AlgorithmsService } from '../algorithms.service';
 
 @Component({
-    selector: 'app-substring',
-    templateUrl: './substring.component.html',
-    styleUrls: ['./substring.component.css']
+    selector: 'app-mass-murder',
+    templateUrl: './mass-murder.component.html',
+    styleUrls: ['./mass-murder.component.css']
 })
-export class SubstringComponent implements OnInit, SolutionComponent {
+export class MassMurderComponent implements OnInit, SolutionComponent {
     @Input() data: any;
 
-    first_idx: number;
-    second_idx: number;
-    firstString: string;
-    secondString: string;
-    displayAnswer: boolean;
-    subsequence: string;
-    tempSubstring: string;
+    personNumber: number;
+    personList: LinkedList;
+    personAlive: number;
+    displaySolution: boolean;
+    displayError: boolean;
     title: string;
     description: string;
     tsCode: string;
@@ -27,13 +25,11 @@ export class SubstringComponent implements OnInit, SolutionComponent {
     algorithm: IAlgorithm;
 
     constructor(private algorithmService: AlgorithmsService) {
-        this.first_idx = 0;
-        this.second_idx = 0;
-        this.firstString = "";
-        this.secondString = "";
-        this.displayAnswer = false;
-        this.subsequence = "";
-        this.tempSubstring = "";
+        this.displaySolution = false;
+        this.displayError = false;
+        this.personList = new LinkedList();
+        this.personNumber = 0;
+        this.personAlive = 0;
         this.title = "";
         this.description = "";
         this.tsCode = "";
@@ -65,9 +61,20 @@ export class SubstringComponent implements OnInit, SolutionComponent {
         })
     }
 
+    lastManStanding(){
+        let i;
+        for (i = 1; i <= this.personNumber; i++) {
+            this.personList.add(i);
+        }
+        this.personList.link();
+        this.personAlive = this.personList.murderPeople();
+        this.displaySolution = true;
+    }
+
     onChange(newValue) {
-        this.displayAnswer = false;
-        this.subsequence = "";
+        this.personNumber = newValue;
+        this.displaySolution = false;
+        this.personList = new LinkedList();
     }
 
 }

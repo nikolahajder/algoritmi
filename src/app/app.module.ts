@@ -45,6 +45,8 @@ import { PrimeDisplayComponent } from './algorithms/prime-display/prime-display.
 import { PrimeNumberFindComponent } from './algorithms/prime-number-find/prime-number-find.component';
 import { StringContainerComponent } from './algorithms/string-container/string-container.component';
 import { SubstringComponent } from './algorithms/substring/substring.component';
+import { MassMurderComponent } from './algorithms/mass-murder/mass-murder.component';
+import { SubsequenceComponent } from './algorithms/subsequence/subsequence.component';
 
 
 @NgModule({
@@ -73,7 +75,9 @@ import { SubstringComponent } from './algorithms/substring/substring.component';
     PrimeDisplayComponent,
     PrimeNumberFindComponent,
     StringContainerComponent,
-    SubstringComponent
+    SubstringComponent,
+    MassMurderComponent,
+    SubsequenceComponent
   ],
   imports: [
     NgChartsModule,
