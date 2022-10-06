@@ -5,10 +5,10 @@
     <input type='string' [(ngModel)]='secondString' (ngModelChange)="onChange($event)" id="value2" name="value2" />
 </form>
 <form class="button-form">
-    <button class='btn btn-primary'> Find
+    <button class='btn btn-primary' (click)="printLCSubStr(firstString, secondString)"> Find
     </button>
 </form>
 <form class="output-group" *ngIf="displayAnswer">
-    <label for="output">The longest common substring is</label>
+    <label for="output">The longest common substring is: {{substring}}</label>
 </form>
 
