@@ -9,6 +9,6 @@
     </button>
 </form>
 <form class="output-group" *ngIf="displayAnswer">
-    <label for="output">The longest common substring is: {{substring}}</label>
+    <label for="output">The longest common substring is: {{substring}} found in <span [innerHTML] = "secondString.replace(firstString , '<b><i>' + firstString + '</i></b>')"></span></label>
 </form>
 
