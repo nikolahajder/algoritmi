@@ -47,6 +47,7 @@ import { StringContainerComponent } from './algorithms/string-container/string-c
 import { SubstringComponent } from './algorithms/substring/substring.component';
 import { MassMurderComponent } from './algorithms/mass-murder/mass-murder.component';
 import { SubsequenceComponent } from './algorithms/subsequence/subsequence.component';
+import { JosephusComponent } from './algorithms/josephus/josephus.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { SubsequenceComponent } from './algorithms/subsequence/subsequence.compo
     StringContainerComponent,
     SubstringComponent,
     MassMurderComponent,
-    SubsequenceComponent
+    SubsequenceComponent,
+    JosephusComponent
   ],
   imports: [
     NgChartsModule,

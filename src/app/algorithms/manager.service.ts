@@ -196,8 +196,12 @@ export class ManagerService {
                 {id: 19}
             ),
             new AlgItem(
-                HomeComponent,
+                MassMurderComponent,
                 {id: 20}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 21}
             )
         ];
     }

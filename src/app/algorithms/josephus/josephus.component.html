@@ -1,0 +1,14 @@
+<form class="input-group">
+    <label for="value">Enter number of people:</label>
+    <input type='number' [(ngModel)]='personNumber' (ngModelChange)="onChange($event)" id="value" name="value" />
+</form>
+<form class="button-form">
+    <button class='btn btn-primary' (click)='lastManStanding()'> Enter
+    </button>
+</form>
+<form class="output-group" *ngIf="displaySolution">
+    <label for="output">The last man standing is: number {{personAlive}}</label>
+</form>
+<form class="output-group" *ngIf="displayError">
+    <label for="output">You must enter a number greater or equal to 1.</label>
+</form>

@@ -220,6 +220,17 @@
                     "HTML": "/mass-murder/mass-murder.component.html",
                     "CSS": "/mass-murder/mass-murder.component.css"
                 }
+        },
+        {
+            "id": 21,
+            "title": "Josephus",
+            "description": "Enter a number of people who stand in a circle. Starting from person 1, every person kills the person standing next to him. Determine who is the last person standing using Josephus calculation.",
+            "paths": 
+                {
+                    "TypeScript": "/josephus/josephus.component.ts",
+                    "HTML": "/josephus/josephus.component.html",
+                    "CSS": "/josephus/josephus.component.css"
+                }
         }
     ]
 }
