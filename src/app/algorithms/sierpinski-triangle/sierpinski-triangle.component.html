@@ -1,0 +1,14 @@
+<form class="input-group">
+    <label for="value">Enter number of people:</label>
+    <input type='number' [(ngModel)]='depth' (ngModelChange)="onChange($event)" id="value" name="value" />
+</form>
+<form class="button-form">
+    <button class='btn btn-primary' (click)='sierpinskiTriangle()'> Enter
+    </button>
+</form>
+<form class="output-group" *ngIf="displaySolution">
+    <canvas #canvas width="600" height="300"></canvas>
+</form>
+<form class="output-group" *ngIf="displayError">
+    <label for="output">You must enter a number greater or equal to 1.</label>
+</form>

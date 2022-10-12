@@ -48,6 +48,7 @@ import { SubstringComponent } from './algorithms/substring/substring.component';
 import { MassMurderComponent } from './algorithms/mass-murder/mass-murder.component';
 import { SubsequenceComponent } from './algorithms/subsequence/subsequence.component';
 import { JosephusComponent } from './algorithms/josephus/josephus.component';
+import { SierpinskiTriangleComponent } from './algorithms/sierpinski-triangle/sierpinski-triangle.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { JosephusComponent } from './algorithms/josephus/josephus.component';
     SubstringComponent,
     MassMurderComponent,
     SubsequenceComponent,
-    JosephusComponent
+    JosephusComponent,
+    SierpinskiTriangleComponent
   ],
   imports: [
     NgChartsModule,

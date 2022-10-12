@@ -61,8 +61,10 @@ export class JosephusComponent implements OnInit, SolutionComponent {
   lastManStanding(){
       let a = 1, l = 0;
       while (Math.pow(2, a) <= this.personNumber) a++;
+      a = a - 1;
       l = this.personNumber - Math.pow(2, a);
       this.personAlive = 2 * l + 1;
+      this.displaySolution = true;
   }
 
   onChange(newValue) {

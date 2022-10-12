@@ -231,6 +231,17 @@
                     "HTML": "/josephus/josephus.component.html",
                     "CSS": "/josephus/josephus.component.css"
                 }
+        },
+        {
+            "id": 22,
+            "title": "Sierpinski Triangle",
+            "description": "Construct the Sierpinski triangle with the depth of a user input.",
+            "paths": 
+                {
+                    "TypeScript": "/sierpinski-triangle/sierpinski-triangle.component.ts",
+                    "HTML": "/sierpinski-triangle/sierpinski-triangle.component.html",
+                    "CSS": "/sierpinski-triangle/sierpinski-triangle.component.css"
+                }
         }
     ]
 }
