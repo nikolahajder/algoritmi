@@ -49,4 +49,7 @@ textarea {
 
   canvas {
     border-style: solid;
+    width: 800px;
+    height: 500px;
+    margin-left: 200px;
   }

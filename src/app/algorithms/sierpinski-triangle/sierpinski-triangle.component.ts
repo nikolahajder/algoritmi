@@ -13,7 +13,7 @@ export class SierpinskiTriangleComponent implements OnInit, SolutionComponent {
 
     @ViewChild('canvas', { static: true })
     canvas: ElementRef<HTMLCanvasElement>;
-    ctx: CanvasRenderingContext2D | null;
+    ctx: CanvasRenderingContext2D;
 
     depth: number;
     displaySolution: boolean;
@@ -58,17 +58,51 @@ export class SierpinskiTriangleComponent implements OnInit, SolutionComponent {
         this.algorithmService.showCode(this.algorithm.paths.CSS).then((value) => {
             this.cssCode = value;
         })
+
+        this.ctx = this.canvas.nativeElement.getContext('2d')!;
     }
 
-    sierpinskiTriangle() {
-        this.ctx = this.canvas.nativeElement.getContext('2d');
-        this.displaySolution = true;
+    sierpinskiTriangle(d: number) {
+        if(d > 10) {
+            this.displayError = true;
+            return;
+        }
+        this.reset();
+        this.ctx.beginPath();
+        this.sierpinski(150, 10, 40, 140, 260, 140, d, this.ctx);
+        this.ctx.closePath();
+        this.ctx.fillStyle = '#000000';
+        this.ctx.fill();
+    }
+
+    sierpinski(Ax, Ay, Bx, By, Cx, Cy, d, ctx) {
+        if (d > 0) {
+            this.sierpinski(Ax, Ay, (Ax + Cx) / 2, (Ay + Cy) / 2, (Ax + Bx) / 2, (Ay + By) / 2, d - 1, ctx);
+            this.sierpinski((Ax + Bx) / 2, (Ay + By) / 2, (Bx + Cx) / 2, (By + Cy) / 2, Bx, By, d - 1, ctx);
+            this.sierpinski((Ax + Cx) / 2, (Ay + Cy) / 2, (Bx + Cx) / 2, (By + Cy) / 2, Cx, Cy, d - 1, ctx);
+        }
+        else {
+            ctx.moveTo(Ax, Ay);
+            ctx.lineTo(Bx, By);
+            ctx.lineTo(Cx, Cy);
+            ctx.lineTo(Ax, Ay);
+        }
     }
 
 
     onChange(newValue) {
         this.depth = newValue;
-        this.displaySolution = false;
+        this.displayError = false;
+        this.ctx.clearRect(0, 0, 700, 400);
     }
 
+    reset() {
+        this.ctx.beginPath();
+        this.ctx.moveTo(150, 10);
+        this.ctx.lineTo(40, 140);
+        this.ctx.lineTo(260, 140);
+        this.ctx.closePath();
+        this.ctx.fillStyle = "#FFF8DC";
+        this.ctx.fill();
+    }
 }
