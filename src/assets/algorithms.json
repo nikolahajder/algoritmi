@@ -242,6 +242,17 @@
                     "HTML": "/sierpinski-triangle/sierpinski-triangle.component.html",
                     "CSS": "/sierpinski-triangle/sierpinski-triangle.component.css"
                 }
+        },
+        {
+            "id": 23,
+            "title": "Game Of Life",
+            "description": "Game of life",
+            "paths": 
+                {
+                    "TypeScript": "/game-of-life/game-of-life.component.ts",
+                    "HTML": "/game-of-life/game-of-life.component.html",
+                    "CSS": "/game-of-life/game-of-life.component.css"
+                }
         }
     ]
 }

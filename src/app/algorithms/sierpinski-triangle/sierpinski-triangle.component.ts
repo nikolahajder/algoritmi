@@ -63,7 +63,7 @@ export class SierpinskiTriangleComponent implements OnInit, SolutionComponent {
     }
 
     sierpinskiTriangle(d: number) {
-        if(d > 10) {
+        if(d > 7) {
             this.displayError = true;
             return;
         }

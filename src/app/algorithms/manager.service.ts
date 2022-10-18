@@ -26,6 +26,7 @@ import { MassMurderComponent } from "./mass-murder/mass-murder.component";
 import { SubsequenceComponent } from "./subsequence/subsequence.component";
 import { JosephusComponent } from "./josephus/josephus.component";
 import { SierpinskiTriangleComponent } from "./sierpinski-triangle/sierpinski-triangle.component";
+import { GameOfLifeComponent } from "./game-of-life/game-of-life.component";
 
 @Injectable({
     providedIn: 'root'
@@ -206,8 +207,12 @@ export class ManagerService {
                 {id: 21}
             ),
             new AlgItem(
-                HomeComponent,
+                GameOfLifeComponent,
                 {id: 22}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 23}
             )
         ];
     }

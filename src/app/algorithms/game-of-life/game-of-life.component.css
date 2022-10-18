@@ -1,0 +1,56 @@
+.text-center {
+    text-align: center;
+    padding: 50px 0 50px;
+}
+
+.input-group {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    padding-bottom: 0px;
+}
+
+.output-group{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    padding-left: 30px;
+}
+
+label {
+    display: inline-block;
+    clear: left;
+    width: 500px;
+    text-align: left;
+}
+
+input {
+    display: inline-block;
+}
+
+.button-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+}
+
+textarea {
+    width: 100%;
+    height: 1000px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    background: transparent;
+    font-size: 16px;
+    resize: none;
+    color: white;
+  }
+
+  canvas {
+    border-style: solid;
+    background: white;
+    width: 800px;
+    height: 500px;
+    margin-left: 200px;
+  }

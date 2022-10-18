@@ -49,6 +49,7 @@ import { MassMurderComponent } from './algorithms/mass-murder/mass-murder.compon
 import { SubsequenceComponent } from './algorithms/subsequence/subsequence.component';
 import { JosephusComponent } from './algorithms/josephus/josephus.component';
 import { SierpinskiTriangleComponent } from './algorithms/sierpinski-triangle/sierpinski-triangle.component';
+import { GameOfLifeComponent } from './algorithms/game-of-life/game-of-life.component';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import { SierpinskiTriangleComponent } from './algorithms/sierpinski-triangle/si
     MassMurderComponent,
     SubsequenceComponent,
     JosephusComponent,
-    SierpinskiTriangleComponent
+    SierpinskiTriangleComponent,
+    GameOfLifeComponent
   ],
   imports: [
     NgChartsModule,
