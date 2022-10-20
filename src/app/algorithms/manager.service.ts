@@ -27,6 +27,7 @@ import { SubsequenceComponent } from "./subsequence/subsequence.component";
 import { JosephusComponent } from "./josephus/josephus.component";
 import { SierpinskiTriangleComponent } from "./sierpinski-triangle/sierpinski-triangle.component";
 import { GameOfLifeComponent } from "./game-of-life/game-of-life.component";
+import { GameOfLife2Component } from "./game-of-life2/game-of-life2.component";
 
 @Injectable({
     providedIn: 'root'
@@ -211,8 +212,12 @@ export class ManagerService {
                 {id: 22}
             ),
             new AlgItem(
-                HomeComponent,
+                GameOfLife2Component,
                 {id: 23}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 24}
             )
         ];
     }

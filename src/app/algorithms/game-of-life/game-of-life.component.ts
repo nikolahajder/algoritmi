@@ -1,6 +1,4 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Filler } from 'chart.js';
-import { UtilityPause } from '../utilityPause';
 
 @Component({
     selector: 'app-game-of-life',
@@ -10,6 +8,7 @@ import { UtilityPause } from '../utilityPause';
 export class GameOfLifeComponent implements OnInit {
 
     grid: number[];
+    next: number[];
     cols: number;
     rows: number;
     resolution: number;
@@ -19,13 +18,15 @@ export class GameOfLifeComponent implements OnInit {
     ctx: CanvasRenderingContext2D;
 
     constructor() {
-        this.resolution = 5;
-        this.cols = 800 / this.resolution;
-        this.rows = 500 / this.resolution;
     }
 
     ngOnInit(): void {
         this.ctx = this.canvas.nativeElement.getContext('2d')!;
+        this.canvas.nativeElement.addEventListener('click', function () { }, false);
+        this.resolution = 5;
+        this.cols = this.canvas.nativeElement.width / this.resolution;
+        this.rows = this.canvas.nativeElement.height / this.resolution;
+        this.grid = this.make2DArray(this.cols, this.rows);
     }
 
     make2DArray(cols, rows) {
@@ -37,7 +38,7 @@ export class GameOfLifeComponent implements OnInit {
     }
 
     async setup() {
-        this.grid = this.make2DArray(this.cols, this.rows);
+
         for (let i = 0; i < this.cols; i++) {
             for (let j = 0; j < this.rows; j++) {
                 this.grid[i][j] = Math.floor(Math.random() * 2);
@@ -60,20 +61,10 @@ export class GameOfLifeComponent implements OnInit {
                 let x = i * this.resolution;
                 let y = j * this.resolution;
                 if (this.grid[i][j] === 0) {
-                    this.ctx.stroke();
+                    //this.ctx.stroke();
                     this.ctx.fillStyle = "black";
                     this.ctx.fill();
-                }
-                this.ctx.beginPath();
-                this.ctx.rect(x, y, this.resolution - 0.5, this.resolution - 0.5);
-                this.ctx.stroke();
-            }
-        }
-        for (let i = 0; i < this.cols; i++) {
-            for (let j = 0; j < this.rows; j++) {
-                let x = i * this.resolution;
-                let y = j * this.resolution;
-                if (this.grid[i][j] === 1) {
+                } else {
                     //this.ctx.stroke();
                     this.ctx.fillStyle = "white";
                     this.ctx.fill();
@@ -100,7 +91,6 @@ export class GameOfLifeComponent implements OnInit {
                 } else {
                     next[i][j] = state;
                 }
-
             }
         }
         this.grid = next;
@@ -120,5 +110,5 @@ export class GameOfLifeComponent implements OnInit {
         sum -= grid[x][y];
         return sum;
     }
-
+    
 }

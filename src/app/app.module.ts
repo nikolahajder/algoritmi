@@ -50,6 +50,8 @@ import { SubsequenceComponent } from './algorithms/subsequence/subsequence.compo
 import { JosephusComponent } from './algorithms/josephus/josephus.component';
 import { SierpinskiTriangleComponent } from './algorithms/sierpinski-triangle/sierpinski-triangle.component';
 import { GameOfLifeComponent } from './algorithms/game-of-life/game-of-life.component';
+import { GameOfLife2Component } from './algorithms/game-of-life2/game-of-life2.component';
+import { NumToArrPipe } from './num-to-arr.pipe';
 
 
 @NgModule({
@@ -83,7 +85,9 @@ import { GameOfLifeComponent } from './algorithms/game-of-life/game-of-life.comp
     SubsequenceComponent,
     JosephusComponent,
     SierpinskiTriangleComponent,
-    GameOfLifeComponent
+    GameOfLifeComponent,
+    GameOfLife2Component,
+    NumToArrPipe
   ],
   imports: [
     NgChartsModule,

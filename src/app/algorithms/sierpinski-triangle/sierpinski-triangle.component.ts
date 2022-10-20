@@ -63,7 +63,7 @@ export class SierpinskiTriangleComponent implements OnInit, SolutionComponent {
     }
 
     sierpinskiTriangle(d: number) {
-        if(d > 7) {
+        if(d > 17) {
             this.displayError = true;
             return;
         }
@@ -80,8 +80,7 @@ export class SierpinskiTriangleComponent implements OnInit, SolutionComponent {
             this.sierpinski(Ax, Ay, (Ax + Cx) / 2, (Ay + Cy) / 2, (Ax + Bx) / 2, (Ay + By) / 2, d - 1, ctx);
             this.sierpinski((Ax + Bx) / 2, (Ay + By) / 2, (Bx + Cx) / 2, (By + Cy) / 2, Bx, By, d - 1, ctx);
             this.sierpinski((Ax + Cx) / 2, (Ay + Cy) / 2, (Bx + Cx) / 2, (By + Cy) / 2, Cx, Cy, d - 1, ctx);
-        }
-        else {
+        } else {
             ctx.moveTo(Ax, Ay);
             ctx.lineTo(Bx, By);
             ctx.lineTo(Cx, Cy);

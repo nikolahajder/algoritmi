@@ -1,0 +1,20 @@
+<table cellspacing="0" cellpadding="0" class="my-table">
+    <tr *ngFor="let col of cols | numToArr">       
+            <table cellspacing="0" cellpadding="0" class="my-table">
+                <tr>
+                    <td *ngFor="let row of rows | numToArr">
+                        <button class="dugme" (click)="onClick(row, col)" [ngStyle]="{'background-color' : grid[col][row]>0? 'white' : 'black '}"></button>
+                    </td>
+                </tr>
+            </table>            
+    </tr>
+</table> 
+<form class="button-form">
+    <button style="margin-right: 10px;" class='btn btn-primary' (click)='startGame()'> Start
+    </button>
+    <button style="margin-right: 10px;" class='btn btn-primary' (click)='randomGame()'> Random
+    </button>
+    <button class='btn btn-primary' (click)="resetGame()"> Reset
+    </button>
+</form>
+

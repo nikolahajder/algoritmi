@@ -245,13 +245,24 @@
         },
         {
             "id": 23,
-            "title": "Game Of Life",
+            "title": "Random Game Of Life",
             "description": "Game of life",
             "paths": 
                 {
                     "TypeScript": "/game-of-life/game-of-life.component.ts",
                     "HTML": "/game-of-life/game-of-life.component.html",
                     "CSS": "/game-of-life/game-of-life.component.css"
+                }
+        },
+        {
+            "id": 24,
+            "title": "Game Of Life",
+            "description": "Game of life",
+            "paths": 
+                {
+                    "TypeScript": "/game-of-life2/game-of-life2.component.ts",
+                    "HTML": "/game-of-life2/game-of-life2.component.html",
+                    "CSS": "/game-of-life2/game-of-life2.component.css"
                 }
         }
     ]
