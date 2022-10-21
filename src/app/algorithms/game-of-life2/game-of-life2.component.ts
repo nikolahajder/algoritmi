@@ -26,11 +26,7 @@ export class GameOfLife2Component implements OnInit {
         this.cols = 30;
         this.rows = 55;
         this.grid = this.make2DArray(this.cols, this.rows);
-        for (let i = 0; i < this.cols; i++) {
-            for (let j = 0; j < this.rows; j++) {
-                this.grid[i][j] = 0;
-            }
-        }
+        this.emptyGrid();
     }
 
     make2DArray(cols, rows) {
@@ -131,11 +127,7 @@ export class GameOfLife2Component implements OnInit {
 
     resetGame() {
         this.stop = true;
-        for (let i = 0; i < this.cols; i++) {
-            for (let j = 0; j < this.rows; j++) {
-                this.grid[i][j] = 0;
-            }
-        }
+        this.emptyGrid();
     }
 
     checkPopulation(){
@@ -149,5 +141,13 @@ export class GameOfLife2Component implements OnInit {
         }
         this.population = false;
         this.resetGame();
+    }
+
+    emptyGrid(){
+        for (let i = 0; i < this.cols; i++) {
+            for (let j = 0; j < this.rows; j++) {
+                this.grid[i][j] = 0;
+            }
+        }
     }
 }

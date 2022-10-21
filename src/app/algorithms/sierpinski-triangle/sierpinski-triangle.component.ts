@@ -63,13 +63,13 @@ export class SierpinskiTriangleComponent implements OnInit, SolutionComponent {
     }
 
     sierpinskiTriangle(d: number) {
-        if(d > 17) {
+        if(d > 10) {
             this.displayError = true;
             return;
         }
         this.reset();
         this.ctx.beginPath();
-        this.sierpinski(150, 10, 40, 140, 260, 140, d, this.ctx);
+        this.sierpinski(400, 15, 100, 429, 700, 429, d, this.ctx);
         this.ctx.closePath();
         this.ctx.fillStyle = '#000000';
         this.ctx.fill();
@@ -92,14 +92,14 @@ export class SierpinskiTriangleComponent implements OnInit, SolutionComponent {
     onChange(newValue) {
         this.depth = newValue;
         this.displayError = false;
-        this.ctx.clearRect(0, 0, 700, 400);
+        this.ctx.clearRect(0, 0, 700, 429);
     }
 
     reset() {
         this.ctx.beginPath();
-        this.ctx.moveTo(150, 10);
-        this.ctx.lineTo(40, 140);
-        this.ctx.lineTo(260, 140);
+        this.ctx.moveTo(400, 15);
+        this.ctx.lineTo(100, 429);
+        this.ctx.lineTo(700, 429);
         this.ctx.closePath();
         this.ctx.fillStyle = "#FFF8DC";
         this.ctx.fill();
