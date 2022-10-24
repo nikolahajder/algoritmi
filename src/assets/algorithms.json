@@ -245,13 +245,13 @@
         },
         {
             "id": 23,
-            "title": "Random Game Of Life",
-            "description": "Game of life",
+            "title": "Bouncing Ball",
+            "description": "bouncing ball",
             "paths": 
                 {
-                    "TypeScript": "/game-of-life/game-of-life.component.ts",
-                    "HTML": "/game-of-life/game-of-life.component.html",
-                    "CSS": "/game-of-life/game-of-life.component.css"
+                    "TypeScript": "/bouncing-ball/bouncing-ball.component.ts",
+                    "HTML": "/bouncing-ball/bouncing-ball.component.html",
+                    "CSS": "/bouncing-ball/bouncing-ball.component.css"
                 }
         },
         {

@@ -28,6 +28,7 @@ import { JosephusComponent } from "./josephus/josephus.component";
 import { SierpinskiTriangleComponent } from "./sierpinski-triangle/sierpinski-triangle.component";
 import { GameOfLifeComponent } from "./game-of-life/game-of-life.component";
 import { GameOfLife2Component } from "./game-of-life2/game-of-life2.component";
+import { BouncingBallComponent } from "./bouncing-ball/bouncing-ball.component";
 
 @Injectable({
     providedIn: 'root'
@@ -208,7 +209,7 @@ export class ManagerService {
                 {id: 21}
             ),
             new AlgItem(
-                GameOfLifeComponent,
+                BouncingBallComponent,
                 {id: 22}
             ),
             new AlgItem(

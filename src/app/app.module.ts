@@ -52,6 +52,7 @@ import { SierpinskiTriangleComponent } from './algorithms/sierpinski-triangle/si
 import { GameOfLifeComponent } from './algorithms/game-of-life/game-of-life.component';
 import { GameOfLife2Component } from './algorithms/game-of-life2/game-of-life2.component';
 import { NumToArrPipe } from './num-to-arr.pipe';
+import { BouncingBallComponent } from './algorithms/bouncing-ball/bouncing-ball.component';
 
 
 @NgModule({
@@ -87,7 +88,8 @@ import { NumToArrPipe } from './num-to-arr.pipe';
     SierpinskiTriangleComponent,
     GameOfLifeComponent,
     GameOfLife2Component,
-    NumToArrPipe
+    NumToArrPipe,
+    BouncingBallComponent
   ],
   imports: [
     NgChartsModule,
