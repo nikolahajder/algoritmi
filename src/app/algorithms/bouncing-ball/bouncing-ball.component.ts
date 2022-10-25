@@ -11,54 +11,80 @@ export class BouncingBallComponent implements OnInit {
     @ViewChild('myCanvas', { static: true })
     canvas: ElementRef<HTMLCanvasElement>;
     ctx: CanvasRenderingContext2D;
-    x: number;
-    y: number;
-    dx: number;
-    dy: number;
+
+    inputAngles: string;
+    angles: number[];
+    // x: number;
+    // y: number;
+    // dx: number;
+    // dy: number;
+    hypotenuse: number;
     ballRadius: number;
 
 
-    constructor() { }
+    constructor() {
+        this.hypotenuse = 5;
+        this.ballRadius = 10;
+        this.inputAngles = "";
+        this.angles = [];
+    }
 
     ngOnInit(): void {
         this.ctx = this.canvas.nativeElement.getContext('2d')!;
-        this.x = this.canvas.nativeElement.width / 2;
-        this.y = this.canvas.nativeElement.height - 30;
-        this.dx = 2;
-        this.dy = -2;
-        this.ballRadius = 10;
-        this.draw();
     }
 
-    drawBall() {
+    calculateDx(angle: number){
+        let dx = this.hypotenuse * (Math.cos(this.degreeToRadian(angle)));
+        return dx;
+    }
+
+    calculateDy(angle:number) {
+        let dy = this.hypotenuse * Math.sin(this.degreeToRadian(angle));
+        return dy * -1;
+    }
+
+    startBalls(){
+        this.angles = this.inputAngles.split(',').map(Number);
+        console.log(this.angles);
+        for (let i = 0; i < this.angles.length; i++) {
+            this.draw(this.calculateDx(this.angles[i]), this.calculateDy(this.angles[i]), this.canvas.nativeElement.width/2, this.canvas.nativeElement.height/2);
+        }
+     }
+
+    drawBall(x:number, y: number) {
+        this.ctx.clearRect(x - 10, y - 10, 20, 20);
         this.ctx.beginPath();
-        this.ctx.arc(this.x, this.y, this.ballRadius, 0, Math.PI * 2);
+        this.ctx.arc(x, y, this.ballRadius, 0, Math.PI * 2);
         this.ctx.fillStyle = "#0095DD";
         this.ctx.fill();
         this.ctx.closePath();
     }
 
-    async draw() {
-        this.ctx.clearRect(0, 0, this.canvas.nativeElement.width, this.canvas.nativeElement.height);
-        this.drawBall();
+    async draw(dx:number, dy:number, x: number, y: number) {
+        this.ctx.clearRect(x - 15, y - 15, 30, 30);
+        this.drawBall(x, y);
 
-        if (this.y + this.dy > this.canvas.nativeElement.height - this.ballRadius || this.y + this.dy < this.ballRadius) {
-            this.dy = -this.dy;
+        if (y + dy > this.canvas.nativeElement.height - this.ballRadius || y + dy < this.ballRadius) {
+            dy = -dy;
         }
 
-        if (this.x + this.dx > this.canvas.nativeElement.width - this.ballRadius || this.x + this.dx < this.ballRadius) {
-            this.dx = -this.dx;
+        if (x + dx > this.canvas.nativeElement.width - this.ballRadius || x + dx < this.ballRadius) {
+            dx = -dx;
         }
 
-        this.x += this.dx;
-        this.y += this.dy;
+        x += dx;
+        y += dy;
         await new Promise<void>((resolve) =>
             setTimeout(() => {
                 resolve();
-            }, 20)
+            }, 1)
         );
-        this.draw();
+        this.ctx.clearRect(x - 10, y - 10, 20, 20);
+        this.draw(dx, dy, x, y);
     }
 
+    degreeToRadian(degree: number){
+        return degree * Math.PI /180;
+    }
 
 }
