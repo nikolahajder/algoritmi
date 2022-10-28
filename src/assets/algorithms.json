@@ -264,6 +264,17 @@
                     "HTML": "/game-of-life2/game-of-life2.component.html",
                     "CSS": "/game-of-life2/game-of-life2.component.css"
                 }
+        },
+        {
+            "id": 25,
+            "title": "Septic Tank",
+            "description": "septic-tank",
+            "paths": 
+                {
+                    "TypeScript": "/septic-tank/septic-tank.component.ts",
+                    "HTML": "/septic-tank/septic-tank.component.html",
+                    "CSS": "/septic-tank/septic-tank.component.css"
+                }
         }
     ]
 }

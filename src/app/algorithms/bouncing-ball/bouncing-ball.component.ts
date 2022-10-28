@@ -14,10 +14,6 @@ export class BouncingBallComponent implements OnInit {
 
     inputAngles: string;
     angles: number[];
-    // x: number;
-    // y: number;
-    // dx: number;
-    // dy: number;
     hypotenuse: number;
     ballRadius: number;
 
@@ -61,7 +57,7 @@ export class BouncingBallComponent implements OnInit {
     }
 
     async draw(dx:number, dy:number, x: number, y: number) {
-        this.ctx.clearRect(x - 15, y - 15, 30, 30);
+        this.ctx.clearRect(x - 20, y - 20 , 40, 40);
         this.drawBall(x, y);
 
         if (y + dy > this.canvas.nativeElement.height - this.ballRadius || y + dy < this.ballRadius) {

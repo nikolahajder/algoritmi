@@ -53,6 +53,7 @@ import { GameOfLifeComponent } from './algorithms/game-of-life/game-of-life.comp
 import { GameOfLife2Component } from './algorithms/game-of-life2/game-of-life2.component';
 import { NumToArrPipe } from './num-to-arr.pipe';
 import { BouncingBallComponent } from './algorithms/bouncing-ball/bouncing-ball.component';
+import { SepticTankComponent } from './algorithms/septic-tank/septic-tank.component';
 
 
 @NgModule({
@@ -89,7 +90,8 @@ import { BouncingBallComponent } from './algorithms/bouncing-ball/bouncing-ball.
     GameOfLifeComponent,
     GameOfLife2Component,
     NumToArrPipe,
-    BouncingBallComponent
+    BouncingBallComponent,
+    SepticTankComponent
   ],
   imports: [
     NgChartsModule,

@@ -1,0 +1,17 @@
+<canvas width="800" height="450" #myCanvas></canvas>
+<form class="input-group">
+    <label for="value">Enter radius:</label>
+    <input type='number' [(ngModel)]='radius' id="value" name="value" />
+</form>
+<form class="forma">
+    <label for="value">Enter space between bars:</label>
+    <input type='number' [(ngModel)]='spaceBeetwen' id="value" name="value" />
+</form>
+<form class="button-form">
+    <button class='btn btn-primary' (click)="drawCircle()"> Enter
+    </button>
+</form>
+<form class="output-group" *ngIf="displayAnswer">
+    <label for="output">You will need 2 bars {{this.radius*2}} in length.</label>
+    <label for="output" *ngFor="let r of this.barRadiuses">You will need 4 bars {{r * 2}} in length.</label>
+</form>
