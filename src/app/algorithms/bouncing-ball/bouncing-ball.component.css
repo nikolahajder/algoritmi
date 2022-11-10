@@ -15,11 +15,17 @@
 }
 
 .input-group {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
+    max-width: 300px;
     padding: 30px;
     margin-left: 170px;
+    display:inline-block;
+}
+
+.forma {
+    display:inline-block;
+    padding: 30px;
+    min-width: 150px;
+    max-width: 500px;
 }
 
 label {
