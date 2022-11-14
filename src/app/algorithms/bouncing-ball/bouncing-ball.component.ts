@@ -20,6 +20,8 @@ export class BouncingBallComponent implements OnInit {
     ballRadius: number;
     paddleInput: string;
     paddle: number[];
+    paddleX: boolean;
+    paddleY: boolean;
 
     constructor() {
         this.ballRadius = 10;
@@ -28,6 +30,8 @@ export class BouncingBallComponent implements OnInit {
         this.paddle = [];
         this.balls = [];
         this.paddleInput = "";
+        this.paddleX = false;
+        this.paddleY = false;
     }
 
     ngOnInit(): void {
@@ -39,7 +43,7 @@ export class BouncingBallComponent implements OnInit {
         this.drawPaddle();
         this.angles = this.inputAngles.split(',').map(Number);
         for (let i = 0; i < this.angles.length; i++) {
-            this.balls.push(new Ball(this.canvas.nativeElement.width / 2, this.canvas.nativeElement.height / 2, this.ballRadius, this.angles[i], 1));
+            this.balls.push(new Ball(this.canvas.nativeElement.width / 2, this.canvas.nativeElement.height / 2, this.ballRadius, this.angles[i], 4));
         }
         for (let i = 0; i < this.angles.length; i++) {
             this.draw(i);
@@ -73,12 +77,19 @@ export class BouncingBallComponent implements OnInit {
             this.balls[idx].changeYDirection();
         }
 
-        if (this.paddleCollisionX(this.balls[idx].x + this.balls[idx].dx, this.balls[idx].y + this.balls[idx].dy)) {
+        // this.paddleCollision(this.balls[idx].x + this.balls[idx].dx, this.balls[idx].y + this.balls[idx].dy);
+        // if(this.paddleX){
+        //     this.balls[idx].changeXDirection();
+        // } else if (this.paddleY) {
+        //     this.balls[idx].changeYDirection();
+        // }
+        this.paddleCollision(this.balls[idx].x + this.balls[idx].dx, this.balls[idx].y + this.balls[idx].dy, this.balls[idx].dx, this.balls[idx].dy);
+        if (this.paddleX) {
             this.balls[idx].changeXDirection();
         } 
         
-        if (this.paddleColisionY(this.balls[idx].y + this.balls[idx].dy, this.balls[idx].x + this.balls[idx].dx)) {
-            this.balls[idx].changeYDirection();
+        if (this.paddleY) {
+             this.balls[idx].changeYDirection();
         }
 
 
@@ -122,21 +133,37 @@ export class BouncingBallComponent implements OnInit {
         }
     }
 
-    paddleCollisionX(nextX: number, y: number) {
-        if (nextX + this.ballRadius> this.paddle[0] && y > this.paddle[1] - 11 && y < this.paddle[1] + this.paddle[3] + 11 && nextX - this.ballRadius < this.paddle[0] + this.paddle[2]) {
-            return true;
+    paddleCollision(nextX: number, nextY: number, dx: number, dy: number){
+        this.paddleX = false;
+        this.paddleY = false;
+        if ((nextX + this.ballRadius > this.paddle[0] - 1 && nextY > this.paddle[1] - 11 && nextY < this.paddle[1] + this.paddle[3] + 11 && nextX + this.ballRadius < this.paddle[0] + this.ballRadius && dx > 0)
+            || (nextX - this.ballRadius < this.paddle[0] + this.paddle[2] + 1 && nextY > this.paddle[1] - 11 && nextY < this.paddle[1] + this.paddle[3] + 11 && nextX - this.ballRadius > this.paddle[0] + this.paddle[2] - this.ballRadius && dx < 0)) {
+            this.paddleX = true;
+            return;
+        } else if ((nextY + this.ballRadius> this.paddle[1] - 1 && nextX > this.paddle[0] - 11 && nextX < this.paddle[0] + this.paddle[2] + 11 && nextY + this.ballRadius < this.paddle[1] + this.ballRadius && dy> 0)
+        || (nextY - this.ballRadius < this.paddle[1] + this.paddle[3] + 1 && nextX > this.paddle[0] - 11 && nextX < this.paddle[0] + this.paddle[2] + 11 && nextY - this.ballRadius > this.paddle[1] + this.paddle[3] - this.ballRadius && dy< 0)){
+            this.paddleY = true;
+            return;
         } else {
-            return false;
+            return;
         }
     }
 
-    paddleColisionY(nextY: number, x: number) {
-        if (nextY + this.ballRadius> this.paddle[1] && x > this.paddle[0] - 11 && x < this.paddle[0] + this.paddle[2] + 11 && nextY -this.ballRadius < this.paddle[1] + this.paddle[3]) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    // paddleCollisionX(nextX: number, y: number) {
+    //     if (nextX + this.ballRadius> this.paddle[0] && y > this.paddle[1] - 11 && y < this.paddle[1] + this.paddle[3] + 11 && nextX - this.ballRadius < this.paddle[0] + this.paddle[2]) {
+    //         this.paddleX = true;
+    //     } else {
+    //         return;
+    //     }
+    // }
+
+    // paddleColisionY(nextY: number, x: number) {
+    //     if (nextY + this.ballRadius> this.paddle[1] && x > this.paddle[0] - 11 && x < this.paddle[0] + this.paddle[2] + 11 && nextY -this.ballRadius < this.paddle[1] + this.paddle[3]) {
+    //         this.paddleY = true;
+    //     } else {
+    //         return;
+    //     }
+    // }
 
     clearWhite() {
         this.ctx.beginPath();
