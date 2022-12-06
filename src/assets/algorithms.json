@@ -275,6 +275,17 @@
                     "HTML": "/septic-tank/septic-tank.component.html",
                     "CSS": "/septic-tank/septic-tank.component.css"
                 }
+        },
+        {
+            "id": 26,
+            "title": "Linear Search",
+            "description": "Function accepts an array and a value. Loop through the array and check if the current array element is equal to the value. If it is,return the index at which the element is found. If the value is never found,return -1.",
+            "paths": 
+                {
+                    "TypeScript": "/linear-search/linear-search.component.ts",
+                    "HTML": "/linear-search/linear-search.component.html",
+                    "CSS": "/linear-search/linear-search.component.css"
+                }
         }
     ]
 }
