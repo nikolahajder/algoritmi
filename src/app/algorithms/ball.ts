@@ -5,6 +5,8 @@ export class Ball {
     speed: number;
     dx: number;
     dy: number;
+    nextDx: number;
+    nextDy: number;
 
     constructor(x, y, radius, angle, speed) {
         this.x = x;
@@ -17,10 +19,12 @@ export class Ball {
 
     calculateDx(angle: number){
         this.dx = this.speed * (Math.cos(this.degreeToRadian(angle)));
+        this.nextDx = this.dx;
     }
 
     calculateDy(angle:number) {
         this.dy = this.speed * Math.sin(this.degreeToRadian(angle)) *-1;
+        this.nextDy = this.dy;
     }
 
     degreeToRadian(degree: number){
@@ -29,9 +33,11 @@ export class Ball {
     
     changeXDirection (){
         this.dx = -this.dx;
+        this.nextDx = -this.nextDx;
     }
 
     changeYDirection(){
         this.dy = -this.dy;
+        this.nextDy = -this.nextDy;
     }
 }
