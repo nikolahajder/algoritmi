@@ -1,0 +1,17 @@
+<form class="input-group" autocomplete="off">
+    <label for="value1">Enter array of sorted numbers:</label>
+    <input type='string' [(ngModel)]='inputNumbers' (ngModelChange)="onChange()" id="value1" name="value1" />
+    <label for="value2">Enter value: </label>
+    <input type='number' [(ngModel)]='value' (ngModelChange)="onChange()" id="value2" name="value2" />
+</form>
+<form class="button-form">
+    <button class='btn btn-primary' (click)='checkSorted()'> Find
+    </button>
+</form>
+<form class="output-group" *ngIf="displayOutput">
+    <label for="output">Your value is on index: {{output}}</label>
+</form> 
+<form class="output-group" *ngIf="displayError">
+    <label for="output">You must input a sorted array of numbers!</label>
+</form> 
+

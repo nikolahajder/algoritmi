@@ -286,6 +286,17 @@
                     "HTML": "/linear-search/linear-search.component.html",
                     "CSS": "/linear-search/linear-search.component.css"
                 }
+        },
+        {
+            "id": 27,
+            "title": "Binary Search 2",
+            "description": "binary search 2",
+            "paths": 
+                {
+                    "TypeScript": "/binary-search-two/binary-search-two.component.ts",
+                    "HTML": "/binary-search-two/binary-search-two.component.html",
+                    "CSS": "/binary-search-two/binary-search-two.component.css"
+                }
         }
     ]
 }

@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
   }
 
   loadHome() {
-    const algItem = this.home[26];
+    const algItem = this.home[27];
 
     const viewContainerRef = this.algHost.viewContainerRef;
     viewContainerRef.clear();
