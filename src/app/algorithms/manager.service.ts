@@ -32,6 +32,7 @@ import { BouncingBallComponent } from "./bouncing-ball/bouncing-ball.component";
 import { SepticTankComponent } from "./septic-tank/septic-tank.component";
 import { LinearSearchComponent } from "./linear-search/linear-search.component";
 import { BinarySearchTwoComponent } from "./binary-search-two/binary-search-two.component";
+import { StringSearchComponent } from "./string-search/string-search.component";
 
 @Injectable({
     providedIn: 'root'
@@ -232,8 +233,12 @@ export class ManagerService {
                 {id: 26}
             ),
             new AlgItem(
-                HomeComponent,
+                StringSearchComponent,
                 {id: 27}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 28}
             )
         ];
     }

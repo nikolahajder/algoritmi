@@ -56,6 +56,7 @@ import { BouncingBallComponent } from './algorithms/bouncing-ball/bouncing-ball.
 import { SepticTankComponent } from './algorithms/septic-tank/septic-tank.component';
 import { LinearSearchComponent } from './algorithms/linear-search/linear-search.component';
 import { BinarySearchTwoComponent } from './algorithms/binary-search-two/binary-search-two.component';
+import { StringSearchComponent } from './algorithms/string-search/string-search.component';
 
 
 @NgModule({
@@ -95,7 +96,8 @@ import { BinarySearchTwoComponent } from './algorithms/binary-search-two/binary-
     BouncingBallComponent,
     SepticTankComponent,
     LinearSearchComponent,
-    BinarySearchTwoComponent
+    BinarySearchTwoComponent,
+    StringSearchComponent
   ],
   imports: [
     NgChartsModule,
