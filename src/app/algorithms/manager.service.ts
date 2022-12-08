@@ -33,6 +33,7 @@ import { SepticTankComponent } from "./septic-tank/septic-tank.component";
 import { LinearSearchComponent } from "./linear-search/linear-search.component";
 import { BinarySearchTwoComponent } from "./binary-search-two/binary-search-two.component";
 import { StringSearchComponent } from "./string-search/string-search.component";
+import { KnuthMorrisPrattComponent } from "./knuth-morris-pratt/knuth-morris-pratt.component";
 
 @Injectable({
     providedIn: 'root'
@@ -237,8 +238,12 @@ export class ManagerService {
                 {id: 27}
             ),
             new AlgItem(
-                HomeComponent,
+                KnuthMorrisPrattComponent,
                 {id: 28}
+            ),
+            new AlgItem(
+                HomeComponent,
+                {id: 29}
             )
         ];
     }

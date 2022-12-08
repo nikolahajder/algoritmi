@@ -308,6 +308,17 @@
                     "HTML": "/string-search/string-search.component.html",
                     "CSS": "/string-search/string-search.component.css"
                 }
+        },
+        {
+            "id": 29,
+            "title": "Knuth Morris Pratt",
+            "description": "KMP algorithm is an algorithm for finding a substring within another string that uses information calculated about the substring to speed up the search process",
+            "paths": 
+                {
+                    "TypeScript": "/knuth-morris-pratt/knuth-morris-pratt.component.ts",
+                    "HTML": "/knuth-morris-pratt/knuth-morris-pratt.component.html",
+                    "CSS": "/knuth-morris-pratt/knuth-morris-pratt.component.css"
+                }
         }
     ]
 }

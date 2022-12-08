@@ -57,6 +57,7 @@ import { SepticTankComponent } from './algorithms/septic-tank/septic-tank.compon
 import { LinearSearchComponent } from './algorithms/linear-search/linear-search.component';
 import { BinarySearchTwoComponent } from './algorithms/binary-search-two/binary-search-two.component';
 import { StringSearchComponent } from './algorithms/string-search/string-search.component';
+import { KnuthMorrisPrattComponent } from './algorithms/knuth-morris-pratt/knuth-morris-pratt.component';
 
 
 @NgModule({
@@ -97,7 +98,8 @@ import { StringSearchComponent } from './algorithms/string-search/string-search.
     SepticTankComponent,
     LinearSearchComponent,
     BinarySearchTwoComponent,
-    StringSearchComponent
+    StringSearchComponent,
+    KnuthMorrisPrattComponent
   ],
   imports: [
     NgChartsModule,

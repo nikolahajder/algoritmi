@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-string-search',
@@ -20,6 +20,7 @@ export class StringSearchComponent {
     }
 
     stringSearch() {
+        this.index = [];
         for (let i = 0; i <= this.text.length - this.word.length; i++) {
             for (let j = 0; j < this.word.length; j++) {
                 if (this.word[j] !== this.text[i + j]) break;
