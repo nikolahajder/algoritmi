@@ -9,35 +9,41 @@ export class KnuthMorrisPrattComponent {
 
     pat: string;
     txt: string;
+    lps: number[];
     indexes: number[];
     displayOutput: boolean;
+    displayError: boolean;
 
     constructor() {
         this.pat = "AABA";
         this.txt = "AABAACAADAABAAABAA";
         this.displayOutput = false;
+        this.indexes = [];
+        this.lps = [];
+        this.displayError = false;
     }
 
     onChange(): void {
         this.displayOutput = false;
+        this.displayError = false;
     }
 
-    computeLPSArray(pat: string, M: number, lps: number[]) {
+    computeLPSArray() {
 
         let len = 0;
         let i = 1;
-        lps[0] = 0;
+        this.lps.push(0);
 
-        while (i < M) {
-            if (pat[len] === pat[i]) {
+        while (i < this.pat.length) {
+            if (this.pat[len] === this.pat[i]) {
                 len++;
-                lps[i] = len;
+                this.lps.push(len);
                 i++;
             } else {
                 if (len != 0) {
-                    len = lps[len - 1];
+                    len = this.lps[len - 1];
                 } else {
-                    lps[i] = len;
+                    this.lps.push(len);
                     i++;
                 }
             }
@@ -49,10 +55,9 @@ export class KnuthMorrisPrattComponent {
         let M = this.pat.length;
         let N = this.txt.length;
 
-        let lps = [];
         let j = 0;
 
-        this.computeLPSArray(this.pat, M, lps);
+        this.computeLPSArray();
 
         this.indexes = [];
         let i = 0;
@@ -64,18 +69,20 @@ export class KnuthMorrisPrattComponent {
 
             if (j === M) {
                 this.indexes.push(i - j);
-                j = lps[j - 1];
+                j = this.lps[j - 1];
             } else if (i < N && this.pat[j] != this.txt[i]) {
                 if (j != 0) {
-                    j = lps[j - 1];
+                    j = this.lps[j - 1];
                 } else {
                     i = i + 1;
                 }
             }
         }
 
+        if (this.indexes.length === 0) {
+            this.displayError = true;
+        }
         this.displayOutput = true;
-
     }
 
 }

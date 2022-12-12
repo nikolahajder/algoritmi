@@ -11,4 +11,6 @@
 <form class="output-group" *ngIf="displayOutput">
     <label *ngFor="let i of indexes" for="output">Pattern found at index : {{i}}</label>
 </form> 
-
+<form class="output-group" *ngIf="displayError">
+    <label for="output">Pattern not found.</label>
+</form> 
