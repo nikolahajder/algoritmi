@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-game-of-life2',
@@ -10,13 +10,15 @@ export class GameOfLife2Component implements OnInit {
     population: boolean;
     buttonClicked: boolean;
     stop: boolean;
-    grid: number[];
-    next: number[];
+    grid: number[][];
+    next: number[][];
     cols: number;
     rows: number;
     resolution: number;
+    arr: number[][];
 
     constructor() {
+        this.arr = [];
     }
 
     ngOnInit(): void {
@@ -30,11 +32,11 @@ export class GameOfLife2Component implements OnInit {
     }
 
     make2DArray(cols, rows) {
-        let arr = new Array(cols);
-        for (let i = 0; i < arr.length; i++) {
-            arr[i] = new Array(rows);
+        this.arr = new Array<number[]>(cols);
+        for (let i = 0; i < this.arr.length; i++) {
+            this.arr[i] = new Array<number>(rows);
         }
-        return arr;
+        return this.arr;
     }
 
     async setup() {
