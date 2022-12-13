@@ -64,23 +64,23 @@ export class SubsequenceComponent implements OnInit, SolutionComponent {
       })
   }
 
-  ReverseString(str) {
+  ReverseString(str:string) {
       return str.split('').reverse().join('')
   }
 
-  max(a, b) {
+  max(a: number, b: number) {
       if (a > b)
           return a;
       else
           return b;
   }
 
-  lcs(str1, str2) {
-      var len1 = str1.length;
-      var len2 = str2.length;
-      var lcs = new Array(len1 + 1);
-      for (var i = 0; i <= len1; i++) {
-          lcs[i] = new Array(len2 + 1)
+  lcs(str1: string, str2: string) {
+      let len1 = str1.length;
+      let len2 = str2.length;
+      let lcs = new Array<number[]>(len1 + 1);
+      for (let i = 0; i <= len1; i++) {
+          lcs[i] = new Array(len2 + 1);
       }
       for (var i = 0; i <= len1; i++) {
           for (var j = 0; j <= len2; j++) {
@@ -98,7 +98,7 @@ export class SubsequenceComponent implements OnInit, SolutionComponent {
           }
       }
   
-      var str = "";
+      let str = "";
       var i:number = len1;
       var j:number = len2;
       while (i > 0 && j > 0) {
@@ -120,7 +120,7 @@ export class SubsequenceComponent implements OnInit, SolutionComponent {
       this.displayAnswer = true;
   }
 
-  onChange(newValue) {
+  onChange() {
       this.displayAnswer = false;
       this.subsequence = "";
   }
