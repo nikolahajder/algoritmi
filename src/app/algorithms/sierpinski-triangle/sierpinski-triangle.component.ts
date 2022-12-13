@@ -75,7 +75,7 @@ export class SierpinskiTriangleComponent implements OnInit, SolutionComponent {
         this.ctx.fill();
     }
 
-    sierpinski(Ax, Ay, Bx, By, Cx, Cy, d, ctx) {
+    sierpinski(Ax: number, Ay: number, Bx: number, By: number, Cx: number, Cy: number, d: number, ctx: CanvasRenderingContext2D) {
         if (d > 0) {
             this.sierpinski(Ax, Ay, (Ax + Cx) / 2, (Ay + Cy) / 2, (Ax + Bx) / 2, (Ay + By) / 2, d - 1, ctx);
             this.sierpinski((Ax + Bx) / 2, (Ay + By) / 2, (Bx + Cx) / 2, (By + Cy) / 2, Bx, By, d - 1, ctx);
@@ -89,7 +89,7 @@ export class SierpinskiTriangleComponent implements OnInit, SolutionComponent {
     }
 
 
-    onChange(newValue) {
+    onChange(newValue: number) {
         this.depth = newValue;
         this.displayError = false;
         this.ctx.clearRect(0, 0, 700, 429);
