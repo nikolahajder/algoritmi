@@ -31,7 +31,7 @@ export class GameOfLife2Component implements OnInit {
         this.emptyGrid();
     }
 
-    make2DArray(cols, rows) {
+    make2DArray(cols: number, rows: number) {
         this.arr = new Array<number[]>(cols);
         for (let i = 0; i < this.arr.length; i++) {
             this.arr[i] = new Array<number>(rows);
@@ -78,7 +78,7 @@ export class GameOfLife2Component implements OnInit {
         this.grid = this.next;
     }
 
-    countNeighbors(grid, x, y) {
+    countNeighbors(grid: number[][], x: number, y: number) {
         let sum = 0;
         for (let i = -1; i < 2; i++) {
             for (let j = -1; j < 2; j++) {
@@ -93,7 +93,7 @@ export class GameOfLife2Component implements OnInit {
         return sum;
     }
 
-    onClick(row, col) {
+    onClick(row: number, col: number) {
         if(this.grid[col][row] === 0){
         this.grid[col][row] = 1;
         } else {
